@@ -1,24 +1,27 @@
 import os
 import urllib
 
-#
-# File mode, caches the page to a temp file
-#
-_file_mode = False
-
 class CustomUserAgentOpener(urllib.FancyURLopener):
     version = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Ubuntu/11.04 Chromium/14.0.825.0 Chrome/14.0.825.0 Safari/535.1"
     #version = "Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A101a Safari/419.3"
 
 class BaseDataSource(object):
+    #
+    # File mode, caches the page to a temp file
+    #
+    _file_mode = False
 
-    def retrieve(self, url, filename = None):
+    def __init__(self, work_host=None, url_base=None):
+        self._host = work_host
+        self._url = url_base
+
+    def retrieve(self, word):
+        url = self._url_for_word(word)
         #FIXME: Urllib errors are not handled
         urllib._urlopener = CustomUserAgentOpener() #TODO: Can this be a common code?
-        if _file_mode :
-            if filename is None :
-                raise Exception('"File Mode" requires a filename to work')
+        if BaseDataSource._file_mode :
             raise Exception('"File Mode" is under implementation')
+            filename = self._tempfilename(word)
             #TODO: Make sure file doesn't exists
             headers = None
             filen = filename
@@ -34,4 +37,9 @@ class BaseDataSource(object):
         else :
             return urllib.urlopen( url )
 
+    def _url_for_word(self, word):
+        return self._url % (word)
+
+    def _tempfilename(self, word):
+        return '.'.join( ('_' + self._host, word, 'tmp') )
 
