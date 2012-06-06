@@ -15,7 +15,7 @@ class BaseDataSource(object):
         self._host = work_host
         self._url = url_base
 
-    def retrieve(self, word):
+    def _retrieve(self, word):
         url = self._url_for_word(word)
         #FIXME: Urllib errors are not handled
         urllib._urlopener = CustomUserAgentOpener() #TODO: Can this be a common code?
@@ -28,11 +28,11 @@ class BaseDataSource(object):
             if not os.path.isfile( filename ) : # Assume is not a directory
                 (filen, headers) = urllib.urlretrieve( url, filename )
             if headers :
-                #print headers # Print HEADERS
+                print headers # Print HEADERS
                 pass
             if filename != filen :
-            print " UNEXPECTED Filename change:", filen
-            #filename = rres[0]
+                print " UNEXPECTED Filename change:", filen
+                #filename = rres[0]
             return open(filen, 'r')
         else :
             return urllib.urlopen( url )
