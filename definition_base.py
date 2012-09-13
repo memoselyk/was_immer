@@ -15,6 +15,7 @@ class BaseDataSource(object):
     # File mode, caches the page to a temp file
     #
     _file_mode = False
+    _cache_dir = 'cache'    # Subfolder in os.curdir
 
     def __init__(self, work_host=None, url_base=None):
         self._host = work_host
@@ -24,26 +25,45 @@ class BaseDataSource(object):
         url = self._url_for_word(word)
         #FIXME: Urllib errors are not handled
         if BaseDataSource._file_mode :
-            raise Exception('"File Mode" is under implementation')
-            filename = self._tempfilename(word)
-            #TODO: Make sure file doesn't exists
+
+            self._check_cache_dir()
+            filename = os.path.join(self._cache_dir, self._tempfilename(word))
+
             headers = None
             filen = filename
+
             if not os.path.isfile( filename ) : # Assume is not a directory
                 (filen, headers) = urllib.urlretrieve( url, filename )
+
             if headers :
                 print headers # Print HEADERS
-                pass
+
             if filename != filen :
-                print " UNEXPECTED Filename change:", filen
-                #filename = rres[0]
+                print " UNEXPECTED Filename change: '%s' to '%s'" % (filename, filen)
+
             return open(filen, 'r')
         else :
             return urllib.urlopen( url )
+
+    def _check_cache_dir(self):
+        """Verifies that cache dir is an existing directory or creates it
+        """
+        if not os.path.exists(self._cache_dir) :
+            os.mkdir(self._cache_dir)
+            return
+
+        if not os.path.isdir(self._cache_dir):
+            raise Exception('Path %s exists but is not a directory' % self._cache_dir)
 
     def _url_for_word(self, word):
         return self._url % (word)
 
     def _tempfilename(self, word):
-        return '.'.join( ('_' + self._host, word, 'tmp') )
+        try :
+            #
+            # Assume word comes UTF-8 encoded , decode it
+            word = word.decode('utf8')
+        except :
+            pass
+        return '.'.join( ('_' + self._host, word.encode('ascii', 'xmlcharrefreplace').replace('&#', ';') , 'tmp') )
 

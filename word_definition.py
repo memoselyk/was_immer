@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 import definition_wiktionary_com as definition_provider
 import sys
+import types
 
 def get_definition(word) :
-	print 'Getting definition of word : %s' % word
+	if type(word) is types.UnicodeType :
+		word = word.encode('utf8')
+	print 'Getting definition of word : %r' % word
 	print '-' * 20 , definition_provider.work_host
 	definition_provider.get_definition( word )
 
@@ -27,6 +30,8 @@ def main() :
 				word = line.strip()
 				from definition_wiktionary_com import WiktionaryDataSource
 				print type(word), WiktionaryDataSource()._tempfilename(word)
+				get_definition(word)
+				print '-' * 60
 	else :
 		print 'Too many arguments, punkt!'
 	print 'Done!'
