@@ -1,9 +1,34 @@
 import logging
+from logging.handlers import SocketHandler
 import os
+import socket
 import urllib
 import time
 
-logging.basicConfig(format="%(message)s")   # Mimic print behaviour
+#
+# This has become a common module, adding the network logger client here
+rootLogger = logging.getLogger('')
+rootLogger.setLevel(logging.DEBUG)
+
+class SocketOrBasicHandler(SocketHandler):
+    def __init__(self, host, port):
+        SocketHandler.__init__(self, host, port)
+        #
+        # Attemt to create the socket and let flow up the exception
+        self.sock = self.makeSocket()
+
+try :
+    socketHandler = SocketOrBasicHandler('localhost',
+                    logging.handlers.DEFAULT_TCP_LOGGING_PORT)
+    # don't bother with a formatter, since a socket handler sends the event as
+    # an unformatted pickle
+    rootLogger.addHandler(socketHandler)
+except socket.error :
+    print '\n', '#' * 60, '\n'
+    print 'Could not create Socket Handler, falling back to basic config'
+    print ' you may like to start the logging server located in network_logger'
+    print '\n', '#' * 60, '\n'
+    logging.basicConfig(format="%(message)s")
 
 class CustomUserAgentOpener(urllib.FancyURLopener):
     logger = logging.getLogger('custom_UserAgent')
