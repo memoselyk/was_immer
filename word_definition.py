@@ -6,19 +6,19 @@ import types
 
 LOGGER = logging.getLogger('MAIN')
 
-def get_definition(word) :
+def get_definition(word, on_browser=False) :
 	if type(word) is types.UnicodeType :
 		word = word.encode('utf8')
 	LOGGER.info('Getting definition of word : %r' % word)
 	LOGGER.warn('%s %s' %('-' * 20 , definition_provider.work_host))
-	definition_provider.get_definition( word )
+	definition_provider.get_definition( word, on_browser )
 
 def main() :
 	#
 	# With no arguments, prompt the user for the word to search
 	if len(sys.argv) == 1 :
 		word = raw_input('Enter word to search definition: ')
-		get_definition(word)
+		get_definition(word, on_browser=True)
 		LOGGER.info('-' * 60)
 	#
 	# Support an optional argument (a file with a list of Words to search)
