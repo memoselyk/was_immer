@@ -1,7 +1,10 @@
 from definition_base import BaseDataSource
+import logging
 
 work_host = 'wiktionary.org'
 url_fmt_str = 'http://en.wiktionary.org/w/api.php?format=xml&action=query&titles=%s&prop=revisions&rvprop=content'
+
+LOGGER = logging.getLogger('def.wiki')
 
 class WiktionaryDataSource(BaseDataSource):
     def __init__(self):
@@ -11,5 +14,5 @@ class WiktionaryDataSource(BaseDataSource):
 def get_definition(word):
     page = WiktionaryDataSource()._retrieve(word)
     for line in page :
-        print "->(%s)%s" % (type(line), line[:-1].decode("utf-8")) 
+        LOGGER.critical("->(%s)%s" % (type(line), line[:-1].decode("utf-8")))
     page.close()
