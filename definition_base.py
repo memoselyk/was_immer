@@ -81,7 +81,7 @@ class BaseDataSource(object):
     #
     # File mode, caches the page to a temp file
     #
-    _file_mode = False
+    _file_mode = True
     _cache_dir = 'cache'    # Subfolder in os.curdir
     logger = logging.getLogger('def.base')
 
