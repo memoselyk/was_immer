@@ -11,7 +11,7 @@ html_work_host = 'wiktionary.org_html'
 html_url_fmt = 'http://en.wiktionary.org/wiki/%s'
 
 LOGGER = logging.getLogger('def.wiki')
-LOGGER.addFilter(logging.Filter('def.wiki.noun'))
+#LOGGER.addFilter(logging.Filter('def.wiki.noun'))
 
 class WiktionaryDataSource(BaseDataSource):
     def __init__(self):
@@ -40,7 +40,8 @@ def get_definition(word, on_browser=False):
         for section in section_path :
             if section not in target_dict : target_dict[section] = {}
             target_dict = target_dict[section]
-        target_dict['_text'] = content_lines[:]
+        if '_text' not in target_dict : target_dict['_text'] = []
+        target_dict['_text'] += content_lines[:]
         LOGGER.debug(' -> '.join(section_path) + ' (%d)' % len(content_lines))
         for i in range(len(content_lines)) : content_lines.pop()    # Clear content lines
 
@@ -114,6 +115,7 @@ def parse_german_noun_for_anki(parsed_data):
     if 'German' not in parsed_data :
         # TODO: Should print in a file, or log it some where
         logNoun.critical('%s %s %s : NOT FOUND' % ('=' * 10, word, '=' * 10))
+        print '\t', '?' * 10, word, '?' * 10, ': NOT FOUND'
         return False
 
     german_def = parsed_data['German']
@@ -136,6 +138,7 @@ def parse_german_noun_for_anki(parsed_data):
     if not 'Noun' in german_def :
         logNoun.error('%s has only: %s' %
                 (word, '/'.join([s for s in german_def if s[0] != '_'])) )
+        print '\t', '>' * 10, word, '>' * 10, '/'.join([s for s in german_def if s[0] != '_'])
     else :
         print '\t', '=' * 10, word, '=' * 10
 
@@ -151,8 +154,9 @@ def parse_german_noun_for_anki(parsed_data):
 
             # Process Templates as in {{name|word|param=etwas}}
             template_processor = Templates()
+            last_found_end = 0
             while True :
-                match = template_finder.search(line_text)
+                match = template_finder.search(line_text, last_found_end)
                 if match is None : break
 
                 logNoun.debug('Found template: -%s-' % match.group(1))
@@ -160,7 +164,7 @@ def parse_german_noun_for_anki(parsed_data):
                 template_args = match.group(1).split('|')
                 name = template_args.pop(0)
                 list_args = []
-                kw_args = {}
+                kw_args = { } #'_ALL_' : match.group(1), '_DEF_': word }
                 for param in template_args :
                     if '=' not in param :
                         list_args.append(param)
@@ -173,10 +177,11 @@ def parse_german_noun_for_anki(parsed_data):
                 try :
                     replacement = getattr(template_processor, name.replace('-', '_'))(*list_args, **kw_args)
                 except AttributeError :
-                    logNoun.error('Template processor "%s" not found!' % name)
-                    replacement = ''
+                    logNoun.critical('Template processor "%s" not found!' % name)
+                    replacement = match.group(0)#''
 
                 line_text = line_text[0:match.start()] + replacement + line_text[match.end():]
+                last_found_end = match.end()
 
             if len(line_text) == 0 : continue   # de-noun template if parsed_head : skip
 
@@ -190,7 +195,25 @@ class Templates(object):
         # genitive: gen*, -s, {{{1}}}
         # plural: pl*, -en, {{{2}}}
         #
-        print 'test_passed %d %-30r %s' % (len(args), sorted(kw_args.keys()), args)
+        import itertools
+        num_args = { 0: 'gen', 1:'plural', 2:'diminutive' }
+        for num, arg in zip( itertools.count(), args) :
+            type_ = num_args.get(num, 'UNDEF')
+            print 'de_noun:[%d]%s=%s' % (num, type_, arg)
+
+        gender_colors = {
+            'm':'der|0000ff',
+            'f':'die|ff3399',
+            'n':'das|009900',
+        }
+
+        for arg_name in sorted(kw_args.keys()) :
+            if arg_name == 'g' and kw_args['g'] in gender_colors :
+                print 'de_noun:%s=%s' % (arg_name, gender_colors[kw_args[arg_name]])
+            else :
+                print 'de_noun:%s=%s' % (arg_name, kw_args[arg_name])
+        #print 'test_passed %d %-30r %s\t%s' % (len(args), sorted(kw_args.keys()), args, kw_args['_DEF_'])
+        #print 'test_passing ', kw_args.get('g', '?'), kw_args['_DEF_']
         return ''
 
     @staticmethod
