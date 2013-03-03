@@ -167,14 +167,35 @@ def parse_german_noun_for_anki(parsed_data):
                 list_args = []
                 kw_args = { } #'_ALL_' : match.group(1), '_DEF_': word }
 
-                if name == 'de-noun' : kw_args['_word'] = word
-
-                for param in template_args :
-                    if '=' not in param :
-                        list_args.append(param)
-                    else :
-                        kw_name, kw_value = param.split('=')    # Should fail if several '='
-                        kw_args[kw_name] = kw_value
+                #
+                # Special handler for de-noun parameters
+                if name == 'de-noun' :
+                    #
+                    # Convert the first 4 positional arguments to the special named arguments in pos_name
+                    pos_count = 0
+                    pos_name  = ['g0', 'gen0', 'pl0', 'dim0']
+                    kw_args['_word'] = word
+                    for param in template_args :
+                        if '=' not in param :
+                            pos_count += 1
+                            try :
+                                kw_args[pos_name[pos_count-1]] = param
+                            except :
+                                list_args.append(param)
+                        else :
+                            kw_name, kw_value = param.split('=')    # Should fail if several '='
+                            kw_args[kw_name] = kw_value
+                            if kw_name.startswith('dim')   : pos_count = 4
+                            elif kw_name.startswith('pl')  : pos_count = 3
+                            elif kw_name.startswith('gen') : pos_count = 2
+                            elif kw_name.startswith('g')   : pos_count = 1
+                else :
+                    for param in template_args :
+                        if '=' not in param :
+                            list_args.append(param)
+                        else :
+                            kw_name, kw_value = param.split('=')    # Should fail if several '='
+                            kw_args[kw_name] = kw_value
 
                 logNoun.debug('Would process template: %s with %r and %r' % (name, list_args, kw_args))
 
@@ -209,14 +230,9 @@ class Templates(object):
 
         #
         # Process the numbered arguments
-        num_args = { 0: 'g', 1: 'gen', 2:'plural', 3:'diminutive' }
-        for num, arg in enumerate(args[4:]) :
-            type_ = num_args.get(num, 'UNDEF')
+        for num, arg in enumerate(args) :
+            type_ = 'UNDEF'
             print 'de_noun:[%d]%s=%s' % (num, type_, arg)
-        prop_gender.extend(args[0:1])       # 0->g (gender)
-        prop_genitive.extend(args[1:2])     # 1->gen (genitive)
-        prop_plural.extend(args[2:3])       # 2->pl (plural)
-        prop_diminutive.extend(args[3:4])   # 3->dim (diminutive)
 
         gender_colors = {
             'm':'der|0000ff',
@@ -251,7 +267,20 @@ class Templates(object):
             elif prop_gender[0] in ['f']      : default_genitive = '%s*' % headword
             else : default_genitive = '<unknown gender(%s)>' % prop_gender[0]
             prop_genitive.append(default_genitive)
+        #
+        # Modify plurals according to the template rule:
+        # If left empty, it defaults to the headword + en,
+        # It can also be set to - to indicate there is no plural form for this noun.
+        if not prop_plural or '' in prop_plural :
+            if '' in prop_plural : prop_plural.remove('')
+            prop_plural.append('%sen' % headword)
 
+        #
+        # Clean-up diminutives
+        while '' in prop_diminutive : prop_diminutive.remove('')
+
+        #
+        # Convert genders from m,f,n to der/die/das
         prop_gender = [ gender_colors.get(i,'*%s*' % i) for i in prop_gender ]
 
         print 'de_noun GENDER(s)     = %s' % ','.join(prop_gender)
