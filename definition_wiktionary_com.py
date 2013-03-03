@@ -196,7 +196,7 @@ class Templates(object):
         # plural: pl*, -en, {{{2}}}
         #
         import itertools
-        num_args = { 0: 'gen', 1:'plural', 2:'diminutive' }
+        num_args = { 0: 'g', 1: 'gen', 2:'plural', 3:'diminutive' }
         for num, arg in zip( itertools.count(), args) :
             type_ = num_args.get(num, 'UNDEF')
             print 'de_noun:[%d]%s=%s' % (num, type_, arg)
