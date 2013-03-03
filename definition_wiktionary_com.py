@@ -99,6 +99,7 @@ def get_definition(word, on_browser=False):
     return parsed_data
 
 def parse_german_noun_for_anki(parsed_data):
+    global logNoun  # To share it with templates
     logNoun = logging.getLogger('def.wiki.noun')
 
     # FIXME: Some Nouns are the plural form of another word, log those instances somewhere
@@ -165,6 +166,9 @@ def parse_german_noun_for_anki(parsed_data):
                 name = template_args.pop(0)
                 list_args = []
                 kw_args = { } #'_ALL_' : match.group(1), '_DEF_': word }
+
+                if name == 'de-noun' : kw_args['_word'] = word
+
                 for param in template_args :
                     if '=' not in param :
                         list_args.append(param)
@@ -195,11 +199,24 @@ class Templates(object):
         # genitive: gen*, -s, {{{1}}}
         # plural: pl*, -en, {{{2}}}
         #
-        import itertools
+        # Extracted categories
+        prop_gender = []
+        prop_plural = []
+        prop_genitive = []
+        prop_diminutive = []
+
+        headword = kw_args.pop('_word')
+
+        #
+        # Process the numbered arguments
         num_args = { 0: 'g', 1: 'gen', 2:'plural', 3:'diminutive' }
-        for num, arg in zip( itertools.count(), args) :
+        for num, arg in enumerate(args[4:]) :
             type_ = num_args.get(num, 'UNDEF')
             print 'de_noun:[%d]%s=%s' % (num, type_, arg)
+        prop_gender.extend(args[0:1])       # 0->g (gender)
+        prop_genitive.extend(args[1:2])     # 1->gen (genitive)
+        prop_plural.extend(args[2:3])       # 2->pl (plural)
+        prop_diminutive.extend(args[3:4])   # 3->dim (diminutive)
 
         gender_colors = {
             'm':'der|0000ff',
@@ -208,12 +225,41 @@ class Templates(object):
         }
 
         for arg_name in sorted(kw_args.keys()) :
-            if arg_name == 'g' and kw_args['g'] in gender_colors :
-                print 'de_noun:%s=%s' % (arg_name, gender_colors[kw_args[arg_name]])
+            cat_list = None
+            if arg_name.startswith('pl')    :   cat_list = prop_plural
+            elif arg_name.startswith('dim') :   cat_list = prop_diminutive
+            elif arg_name.startswith('gen') :   cat_list = prop_genitive
+            elif arg_name.startswith('g')   :   cat_list = prop_gender
+
+            if cat_list is not None : cat_list.append(kw_args[arg_name])
             else :
+                logNoun.error('Unknown category : %s' % arg_name)
                 print 'de_noun:%s=%s' % (arg_name, kw_args[arg_name])
+                continue
+
         #print 'test_passed %d %-30r %s\t%s' % (len(args), sorted(kw_args.keys()), args, kw_args['_DEF_'])
         #print 'test_passing ', kw_args.get('g', '?'), kw_args['_DEF_']
+
+        #
+        # Add genitive according to the template rule:
+        # headword + s if it's masculine or neuter, and to the headword alone if it's feminine
+        if not prop_genitive or '' in prop_genitive :
+            if '' in prop_genitive : prop_genitive.remove('')
+            default_genitive = '<not available>'
+            if not prop_gender : default_genitive = '<no gender>'
+            elif prop_gender[0] in ['m', 'n'] : default_genitive = '%ss*' % headword
+            elif prop_gender[0] in ['f']      : default_genitive = '%s*' % headword
+            else : default_genitive = '<unknown gender(%s)>' % prop_gender[0]
+            prop_genitive.append(default_genitive)
+
+        prop_gender = [ gender_colors.get(i,'*%s*' % i) for i in prop_gender ]
+
+        print 'de_noun GENDER(s)     = %s' % ','.join(prop_gender)
+        print 'de_noun PLURAL(s)     = %s' % ','.join(prop_plural)
+        print 'de_noun GENITIVE(s)   = %s' % ','.join(prop_genitive)
+        if prop_diminutive :
+            print 'de_noun DIMINUTIVE(s) = %s' % ','.join(prop_diminutive)
+
         return ''
 
     @staticmethod
