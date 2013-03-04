@@ -136,14 +136,25 @@ def parse_german_noun_for_anki(parsed_data):
     #    print '-=-' * 15
 
     template_finder = re.compile('{{([^}]+)}}')
-    if not 'Noun' in german_def :
+    #
+    # Find Noun definitions in sub-levels, as under Etimology 1/Etimology 2
+    noun_def = []
+    def merge_all_nouns(data_dict, path=[]) :
+        if 'Noun' in data_dict :
+            if len(path) > 0 : noun_def.append('\tFrom %s :' % '.'.join(path))
+            noun_def.extend(data_dict['Noun']['_text'])
+        for section in [ k for k in data_dict if k[0] != '_' ] : merge_all_nouns(data_dict[section], path + [section])
+    merge_all_nouns(german_def)
+
+    if not noun_def :
         logNoun.error('%s has only: %s' %
                 (word, '/'.join([s for s in german_def if s[0] != '_'])) )
         print '\t', '>' * 10, word, '>' * 10, '/'.join([s for s in german_def if s[0] != '_'])
     else :
+        if not 'Noun' in german_def : logNoun.warn('%s, Noun in down-levels' % word)
+
         print '\t', '=' * 10, word, '=' * 10
 
-        noun_def = german_def['Noun']['_text']
         no_quot_noun = [ l for l in noun_def if not l.startswith('#*') ]
 
         logNoun.info('(%d) -> %d' % (len(noun_def), len(no_quot_noun)) )
