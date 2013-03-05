@@ -77,7 +77,7 @@ def main(colored_output=True):
     # TODO: Colored output is relies on ANSI color codes, Windows needs to be supported somehow
     if colored_output :
         colored_console = logging.StreamHandler()
-        colored_console.setLevel(logging.DEBUG)     # Full Logging
+        colored_console.setLevel(logging.WARN)     # Full Logging
         colored_console.setFormatter(AnsiColorFormatter("%(relativeCreated)5d %(name)-15s %(levelname)-8s %(message)s"))
         logging.getLogger().addHandler(colored_console)
     else :

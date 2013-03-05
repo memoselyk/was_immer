@@ -36,6 +36,10 @@ def get_definition(word, on_browser=False):
     section_path = []   # Path of sections being parsed
 
     def _flush_lines() :
+        #
+        # FIXME If the section is repeated serveral times (as in Wurm) the it would be nice if each section is put
+        #    in a different dictionary with a prefix
+        #
         target_dict = parsed_data
         for section in section_path :
             if section not in target_dict : target_dict[section] = {}
@@ -124,9 +128,12 @@ def parse_german_noun_for_anki(parsed_data):
     #
     # List sections for debugging purposes
     def output_section(data_dict, lvl=''):
-        for section in [ k for k in data_dict if k[0] != '_' ] :
-            logNoun.debug(lvl + section)
-            output_section(data_dict[section], lvl + '-')
+        #for section in [ k for k in data_dict if k[0] != '_' ] :
+        for section in data_dict :
+            logNoun.info('%s%s : %s' % (lvl, section, type(data_dict[section])))
+            #logNoun.debug(lvl + section)
+            if section[0] != '_' :
+                output_section(data_dict[section], lvl + '-')
     #output_section( german_def )
 
     # TODO
@@ -135,7 +142,6 @@ def parse_german_noun_for_anki(parsed_data):
     #    print '\n'.join( german_def['Etymology']['_text'])
     #    print '-=-' * 15
 
-    template_finder = re.compile('{{([^}]+)}}')
     #
     # Find Noun definitions in sub-levels, as under Etimology 1/Etimology 2
     noun_def = []
@@ -159,12 +165,25 @@ def parse_german_noun_for_anki(parsed_data):
 
         logNoun.info('(%d) -> %d' % (len(noun_def), len(no_quot_noun)) )
 
+        numbered_list_counter = 0
         for line_text in noun_def :
             if line_text.startswith('#*') : continue    # Skip quotations
             if line_text.startswith('#:') : continue    # Skip sample sentences
             if re.match('^-+$', line_text) is not None : continue    # Skip dash 'separators'
 
+            if line_text.startswith('# ') :
+                numbered_list_counter += 1
+                # FIXME Number should be omitted if list contains only 1 element
+                line_text = ('%d.'%numbered_list_counter) + line_text[2:]
+            else :
+                numbered_list_counter = 0
+
+            #
+            while re.search('\[\[[^\]]+\]\]', line_text) :
+                line_text = re.sub('\[\[([^\|\]]+\|)*([^\]]+)\]\]', r'\2', line_text)
+
             # Process Templates as in {{name|word|param=etwas}}
+            template_finder = re.compile('{{([^}]+)}}')
             template_processor = Templates()
             last_found_end = 0
             while True :
@@ -224,6 +243,30 @@ def parse_german_noun_for_anki(parsed_data):
             print line_text
 
 class Templates(object):
+
+    def __getattr__(self, name):
+        #
+        # Special handler for contextual named attributes
+        if name in [
+                'anatomy', 'architecture', 'astronomy',
+                'chess', 'Christianity', 'colloquial',
+                'figuratively', 'finance', 'football', 'geography', 'geometry', 'grammar', 'graph theory',
+                'heraldry', 'historical',
+                'legal', 'linguistics',
+                'meteorology', 'nautical', 'obsolete', 'poetry', 'printing', 'software', 'sports',
+                'textiles'] :
+            return lambda *a, **k : Templates.context(*([name]+list(a)), **k)
+        else :
+            raise AttributeError
+
+    @staticmethod
+    def context(*args, **kw_args):
+        kw_args.pop('lang', '')
+        args_list = list(args)
+        if 'or' in args_list : args_list.remove('or')
+        return ('<span style="font-style:italic;color:#808080;">'
+                '&lt;%s&gt;</span>' % ', '.join(args_list + [ '%s=%s' % (k,kw_args[k]) for k in kw_args ]))
+
     @staticmethod
     def de_noun(*args, **kw_args):
         #
@@ -264,9 +307,6 @@ class Templates(object):
                 print 'de_noun:%s=%s' % (arg_name, kw_args[arg_name])
                 continue
 
-        #print 'test_passed %d %-30r %s\t%s' % (len(args), sorted(kw_args.keys()), args, kw_args['_DEF_'])
-        #print 'test_passing ', kw_args.get('g', '?'), kw_args['_DEF_']
-
         #
         # Add genitive according to the template rule:
         # headword + s if it's masculine or neuter, and to the headword alone if it's feminine
@@ -303,6 +343,12 @@ class Templates(object):
         return ''
 
     @staticmethod
+    def gloss(*args, **kw_args):
+        return ' '.join(
+                ['(%s)' % t for t in args] + 
+                ['gloss:%s="%s"' % (k, kw_args[k]) for k in kw_args ])
+
+    @staticmethod
     def term(*args, **kw_args):
         interlink   = args[0]
         disp_text   = args[1] if len(args) >= 2 else ''
@@ -313,3 +359,9 @@ class Templates(object):
             return disp_text
         else :
             return '%s ("%s")' % (disp_text, translation)
+
+    @staticmethod
+    def qualifier(*args, **kw_args):
+        return ' '.join(
+                ['(<i>%s</i>)' % t for t in args] + 
+                ['qualifier:%s="%s"' % (k, kw_args[k]) for k in kw_args ])

@@ -11,7 +11,7 @@ def get_definition(word, on_browser=False) :
 	if type(word) is types.UnicodeType :
 		word = word.encode('utf8')
 	LOGGER.info('Getting definition of word : %r' % word)
-	LOGGER.warn('%s %s' %('-' * 20 , definition_provider.work_host))
+	LOGGER.debug('%s %s' %('-' * 20 , definition_provider.work_host))
 	definition = definition_provider.get_definition( word, on_browser )
 	definition_provider.parse_german_noun_for_anki(definition)
 
@@ -39,7 +39,7 @@ def main() :
 				LOGGER.info('-' * 60)
 	else :
 		LOGGER.error('Too many arguments, punkt!')
-	LOGGER.warn('Done!')
+	LOGGER.info('Done!')
 
 if __name__ == "__main__" :
 	main()
