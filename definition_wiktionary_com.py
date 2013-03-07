@@ -301,6 +301,8 @@ class Templates(object):
             elif arg_name.startswith('gen') :   cat_list = prop_genitive
             elif arg_name.startswith('g')   :   cat_list = prop_gender
 
+            # FIXME Arguments f and m may be used to indicate (feminine, masculine forms)
+
             if cat_list is not None : cat_list.append(kw_args[arg_name])
             else :
                 logNoun.error('Unknown category : %s' % arg_name)
