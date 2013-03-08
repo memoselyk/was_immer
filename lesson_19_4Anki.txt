@@ -1,31 +1,25 @@
 	========== Delfin ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Delfine
-de_noun GENITIVE(s)   = Delfins*
 1.<i>alternative spelling of</i> Delphin
 	========== Idee ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ideen
-de_noun GENITIVE(s)   = Idee*
 1.idea
 	========== Papagei ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Papageien
-de_noun GENITIVE(s)   = Papageis
 1.parrot
 	========== Rekorder ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Rekorder
-de_noun GENITIVE(s)   = Rekorders
 1.<span style="font-style:italic;color:#808080;">&lt;device&gt;</span> recorder
 	========== Ski ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Skier
-de_noun GENITIVE(s)   = Skis
 1.ski
 	========== Zeit ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zeiten
-de_noun GENITIVE(s)   = Zeit*
 1.time
 2.<span style="font-style:italic;color:#808080;">&lt;grammar&gt;</span> tense

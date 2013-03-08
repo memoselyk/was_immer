@@ -1,12 +1,10 @@
 	========== Ankunft ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ankünfte
-de_noun GENITIVE(s)   = Ankunft*
 1.arrival
 	========== Anschluss ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Anschlüsse
-de_noun GENITIVE(s)   = Anschlusses
 1.connection, joining
 2.annexation
 3.<span style="font-style:italic;color:#808080;">&lt;historical&gt;</span> Anschluss
@@ -14,23 +12,19 @@ de_noun GENITIVE(s)   = Anschlusses
 	========== Café ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Cafés
-de_noun GENITIVE(s)   = Cafés
 1.café, coffee shop
 	========== Bahnsteig ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Bahnsteige
-de_noun GENITIVE(s)   = Bahnsteigs,Bahnsteiges
 1.train platform
 	========== Laden ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Läden
-de_noun GENITIVE(s)   = Ladens
 1.shop
 2.shutter (window shutter)
 	========== Decke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Decken
-de_noun GENITIVE(s)   = Decke*
 1.cover, blanket, quilt
 2.ceiling, roof
 3.skin
@@ -40,23 +34,19 @@ de_noun GENITIVE(s)   = Decke*
 	========== Ehepaar ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Ehepaare
-de_noun GENITIVE(s)   = Ehepaars,Ehepaares
 1.married couple
 	========== Einbrecher ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Einbrecher
-de_noun GENITIVE(s)   = Einbrechers
 1.burglar, picklock, housebreaker
 	========== Einladung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Einladungen
-de_noun GENITIVE(s)   = Einladung*
 1.invitation
 	========== Essen ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Essen
-de_noun GENITIVE(s)   = Essens
 1.meal
 	From Etymology 2 :
 {{head|de|noun form}}
@@ -65,49 +55,40 @@ de_noun GENITIVE(s)   = Essens
 de_noun:[0]UNDEF=
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Flughäfen
-de_noun GENITIVE(s)   = Flughafens
 1.airport
 	========== Gast ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Gäste
-de_noun GENITIVE(s)   = Gastes,Gasts
 1.guest
 	========== Getränk ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Getränke
-de_noun GENITIVE(s)   = Getränks,Getränkes
 1.drink
 	========== Glas ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Gläser
-de_noun GENITIVE(s)   = Glases
 1.<span style="font-style:italic;color:#808080;">&lt;material&gt;</span> glass
 2.<span style="font-style:italic;color:#808080;">&lt;container&gt;</span> glass
 3.<span style="font-style:italic;color:#808080;">&lt;container&gt;</span> jar (made of glass)
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Glasen
-de_noun GENITIVE(s)   = Glases
 1.The amount of a liquid that fits into a glass
 2.<span style="font-style:italic;color:#808080;">&lt;nautical&gt;</span> time stamp for half an hour
 	========== Käfig ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Käfige
-de_noun GENITIVE(s)   = Käfigs
 1.cage
 	========== Kartoffelsalat ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kartoffelsalate
-de_noun GENITIVE(s)   = Kartoffelsalats,Kartoffelsalates
 1.potato salad
 	========== Salat ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Salate
-de_noun GENITIVE(s)   = Salats,Salates
 1.salad, lettuce
 	========== Keller ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Keller
-de_noun GENITIVE(s)   = Kellers
 1.cellar
 2.basement
 	========== Ketchup ==========
@@ -116,13 +97,11 @@ de_noun GENITIVE(s)   = Kellers
 	========== Laden ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Läden
-de_noun GENITIVE(s)   = Ladens
 1.shop
 2.shutter (window shutter)
 	========== Platz ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Plätze
-de_noun GENITIVE(s)   = Platzes
 1.circus  (<i>architecture</i>)
 2.square (area)
 3.place (unspecified place)
@@ -131,12 +110,10 @@ de_noun GENITIVE(s)   = Platzes
 	========== Party ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Partys
-de_noun GENITIVE(s)   = Party*
 1.<span style="font-style:italic;color:#808080;">&lt;social gathering&gt;</span> party
 	========== Platz ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Plätze
-de_noun GENITIVE(s)   = Platzes
 1.circus  (<i>architecture</i>)
 2.square (area)
 3.place (unspecified place)
@@ -145,7 +122,6 @@ de_noun GENITIVE(s)   = Platzes
 	========== Raum ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Räume
-de_noun GENITIVE(s)   = Raums,Raumes
 1.room, space, chamber
 2.place
 3.area
@@ -155,11 +131,9 @@ de_noun GENITIVE(s)   = Raums,Raumes
 	========== See ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Seen
-de_noun GENITIVE(s)   = Sees
 1.lake
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = -
-de_noun GENITIVE(s)   = See*
 1.sea
 	========== Senf ==========
 <b>Senf</b> {{m}}
@@ -167,24 +141,20 @@ de_noun GENITIVE(s)   = See*
 	========== Sportler ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Sportler
-de_noun GENITIVE(s)   = Sportlers
 1.sportsman (male athlete)
 	========== Station ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Stationen
-de_noun GENITIVE(s)   = Station
 1.station (place)
 2.stopover
 3.ward (division in a hospital)
 	========== Suppe ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Suppen
-de_noun GENITIVE(s)   = Suppe
 1.soup
 	========== Tafel ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Tafeln
-de_noun GENITIVE(s)   = Tafel*
 1.table
 2.slab
 3.board
@@ -195,39 +165,32 @@ de_noun GENITIVE(s)   = Tafel*
 	========== Taxifahrer ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Taxifahrer
-de_noun GENITIVE(s)   = Taxifahrers
 1.taxi driver, cabdriver, cabbie
 	========== Salat ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Salate
-de_noun GENITIVE(s)   = Salats,Salates
 1.salad, lettuce
 	========== Vase ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Vasen
-de_noun GENITIVE(s)   = Vase*
 1.vase
 	========== Verspätung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Verspätungen
-de_noun GENITIVE(s)   = Verspätung*
 1.delay, lateness, late arrival
 	========== Wald ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Wälder
-de_noun GENITIVE(s)   = Walds,Waldes
 1.forest, wood, woods, woodland
 	========== Flasche ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Flaschen
-de_noun GENITIVE(s)   = Flasche*
 1.bottle
 2.flask
 3.flagon
 	========== Wurst ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Würste
-de_noun GENITIVE(s)   = Wurst
 1.sausage
 	?????????? Ansage ?????????? : NOT FOUND
 	?????????? Bahnhofscafé ?????????? : NOT FOUND

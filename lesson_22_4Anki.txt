@@ -1,12 +1,10 @@
 	========== Apotheke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Apotheken
-de_noun GENITIVE(s)   = Apotheke*
 1.pharmacy
 	========== Arm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Arme
-de_noun GENITIVE(s)   = Armes,Arms
 de_noun DIMINUTIVE(s) = Ärmchen
 1.<span style="font-style:italic;color:#808080;">&lt;anatomy&gt;</span> an arm
 2.anything that resembles an arm (<i>for example parts of a device, machine, etc.</i>)
@@ -16,63 +14,52 @@ de_noun DIMINUTIVE(s) = Ärmchen
 	========== Arzt ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Ärzte
-de_noun GENITIVE(s)   = Arztes
 1.doctor, physician.
 	========== Ärztin ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ärztinnen
-de_noun GENITIVE(s)   = Ärztin*
 1.female doctor or physician.
 	========== Augenarzt ==========
 de_noun:f=Augenärztin
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Augenärzte
-de_noun GENITIVE(s)   = Augenarztes
 1.ophthalmologist, eye doctor
 	========== Autofahrer ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Autofahrer
-de_noun GENITIVE(s)   = Autofahrers
  '''Autofahrerin''' ''f''
 1.the driver of a car, a motorist
 	========== Bein ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Beine
-de_noun GENITIVE(s)   = Beins,Beines
 1.leg of a person, animal or object
 2.<span style="font-style:italic;color:#808080;">&lt;obsolete&gt;</span> bone
 	========== Bericht ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Berichte
-de_noun GENITIVE(s)   = Berichts,Berichtes
 1.report
 	========== Besucher ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Besucher
-de_noun GENITIVE(s)   = Besuchers
 1.visitor
 2.<span style="font-style:italic;color:#808080;">&lt;software, design&gt;</span> The visitor design pattern.
 	========== Brust ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Brüste
-de_noun GENITIVE(s)   = Brust*
 1.breast, bosom
 2.chest
 	========== Buchhandlung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Buchhandlungen
-de_noun GENITIVE(s)   = Buchhandlung*
 1.bookstore, bookshop
 	========== Doktor ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Doktoren
-de_noun GENITIVE(s)   = Doktors
 1.<span style="font-style:italic;color:#808080;">&lt;academia&gt;</span> doctor
 2.<span style="font-style:italic;color:#808080;">&lt;medicine, colloquial&gt;</span> doctor
 	========== Eingang ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Eingänge
-de_noun GENITIVE(s)   = Eingangs,Einganges
 1.entrance, entry
 2.arrival
 3.input
@@ -92,149 +79,123 @@ de_noun PLURAL(s)     = Fahrer
 	========== Fahrt ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Fahrten
-de_noun GENITIVE(s)   = Fahrt*
 1.ride (from fahren)
 2.journey
 	========== Feuerwehrmann ==========
 de_noun:f=Feuerwehrfrau
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Feuerwehrleute,Feuerwehrmänner
-de_noun GENITIVE(s)   = Feuerwehrmanns,Feuerwehrmannes
 1.fireman, firefighter
 	========== Feuerwehrfrau ==========
 de_noun:m=Feuerwehrmann
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Feuerwehrfrauen
-de_noun GENITIVE(s)   = Feuerwehrfrau
 1.firewoman, female firefighter
 	========== Hafen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Häfen
-de_noun GENITIVE(s)   = Hafens
 1.harbor, harbour; port; haven
 	========== Haken ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Haken
-de_noun GENITIVE(s)   = Hakens
 1.hook
 2.catch, hitch (a concealed difficulty, especially in a deal or negotiation)
 3.checkmark
 	========== Job ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Jobs
-de_noun GENITIVE(s)   = Jobs*
 1.a job (work)
 2.an assignment
 	========== Kinderwagen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kinderwagen,Kinderwägen
-de_noun GENITIVE(s)   = Kinderwagens
 1.baby carriage, stroller (<i>US</i>); pram (<i>UK</i>)
 	========== Krankenhaus ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Krankenhäuser
-de_noun GENITIVE(s)   = Krankenhauses
 de_noun DIMINUTIVE(s) = Krankenhäuschen
 1.hospital
 	========== Notaufnahme ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Notaufnahmen
-de_noun GENITIVE(s)   = Notaufnahme*
 1.emergency room
 2.<span style="font-style:italic;color:#808080;">&lt;historical&gt;</span> The act or location of receiving refugees from East Germany into West Germany.
 	========== Opfer ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Opfer
-de_noun GENITIVE(s)   = Opfers
 1.victim
 2.sacrifice
 	========== Ort ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Orte
-de_noun GENITIVE(s)   = Orts,Ortes
 1.place, location
 2.village
 	========== Personenwagen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Personenwägen
-de_noun GENITIVE(s)   = Personenwagens
 1.<span style="font-style:italic;color:#808080;">&lt;railway&gt;</span> passenger car
 	========== Praxis ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Praxen
-de_noun GENITIVE(s)   = Praxis*
 1.practice
 2.surgery
 	========== Reaktion ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Reaktionen
-de_noun GENITIVE(s)   = Reaktion*
 1.response
 2.reaction
 	========== Sanitäter ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Sanitäter
-de_noun GENITIVE(s)   = Sanitäters
 1.medic, ambulance man, paramedic, EMT
 	========== Schiff ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Schiffe
-de_noun GENITIVE(s)   = Schiffs,Schiffes
 1.<span style="font-style:italic;color:#808080;">&lt;nautical&gt;</span> ship
 2.<span style="font-style:italic;color:#808080;">&lt;architecture&gt;</span> nave
 	========== Schirm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Schirme
-de_noun GENITIVE(s)   = Schirms,Schirmes
 1.screen
 2.umbrella
 	========== Schmerz ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Schmerzen
-de_noun GENITIVE(s)   = Schmerzes
 1.ache, pain
 	========== Tempo ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Tempi,Tempos
-de_noun GENITIVE(s)   = Tempos
 1.(<i>pace, rate, speed</i>) tempo (<i>plural: Tempi</i>)
 2.(<i>Registered trademark for a paper handkerchief brand, but used as a generic term</i>) tissue (<i>plural: Tempos</i>)
 	========== Tod ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Tode
-de_noun GENITIVE(s)   = Todes,Tods
 1.death
 	========== Uniform ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Uniformen
-de_noun GENITIVE(s)   = Uniform*
 1.uniform (distinctive outfit as a means of identifying members of a group)
 	========== Verkehr ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Verkehre
-de_noun GENITIVE(s)   = Verkehrs
 1.traffic
 2.<span style="font-style:italic;color:#808080;">&lt;euphemistic&gt;</span> intercourse
 	========== Vorsicht ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = -
-de_noun GENITIVE(s)   = Vorsicht*
 1.caution, cautiousness
 	========== Zahnarzt ==========
 de_noun:f=Zahnärztin
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Zahnärzte
-de_noun GENITIVE(s)   = Zahnarztes
 1.dentist
 	========== Zahnarztpraxis ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zahnarztpraxen
-de_noun GENITIVE(s)   = Zahnarztpraxis*
 1.dentist's practice
 	========== Zentrale ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zentralen
-de_noun GENITIVE(s)   = Zentrale*
 1.central office, headquarters
 	?????????? Arztpraxis ?????????? : NOT FOUND
 	?????????? Blumenhändlerin ?????????? : NOT FOUND

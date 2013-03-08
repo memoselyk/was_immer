@@ -1,58 +1,48 @@
 	========== Anruf ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Anrufe
-de_noun GENITIVE(s)   = Anrufs,Anrufes
 1.(phone) call
 	========== Büro ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Büros
-de_noun GENITIVE(s)   = Büros
 1.office
 	========== Chefin ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Chefinnen
-de_noun GENITIVE(s)   = Chefin
 1.female boss
 	========== Mitarbeiter ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Mitarbeiter
-de_noun GENITIVE(s)   = Mitarbeiters
 1.employee
 2.assistant (person who assists)
 	========== Nachricht ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Nachrichten
-de_noun GENITIVE(s)   = Nachricht*
 1.message (<i>communications</i>: Information which is sent from a source to a receiver)
 2.notification
 3.news (only in plural)
 	========== Notiz ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Notizen
-de_noun GENITIVE(s)   = Notiz*
 1.note (memorandum)
 2.memo
 	========== Parkhaus ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Parkhäuser
-de_noun GENITIVE(s)   = Parkhauses
 1.parking garage, multi-storey car park
 	========== Schlüssel ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Schlüssel
-de_noun GENITIVE(s)   = Schlüssels*
 1.key
 2.clef
 3.short for Schraubenschlüssel (spanner, wrench)
 	========== Taube ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Tauben
-de_noun GENITIVE(s)   = Taube*
 1.dove, pigeon
 	========== Turm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Türme
-de_noun GENITIVE(s)   = Turmes,Turms
 1.<span style="font-style:italic;color:#808080;">&lt;architecture&gt;</span> tower, spire
 2.<span style="font-style:italic;color:#808080;">&lt;architecture&gt;</span> steeple (church)
 3.<span style="font-style:italic;color:#808080;">&lt;chess&gt;</span> rook
@@ -60,12 +50,10 @@ de_noun GENITIVE(s)   = Turmes,Turms
 	========== Waschmaschine ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Waschmaschinen
-de_noun GENITIVE(s)   = Waschmaschine*
 1.washing machine
 	========== Wochenende ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Wochenenden
-de_noun GENITIVE(s)   = Wochenendes
 1.weekend
 	?????????? Fernsehfilm ?????????? : NOT FOUND
 	?????????? Kundendienst ?????????? : NOT FOUND

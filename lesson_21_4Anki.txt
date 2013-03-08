@@ -1,13 +1,11 @@
 	========== Bäckerei ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Bäckereien
-de_noun GENITIVE(s)   = Bäckerei*
 1.bakery
 	========== Bank ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Bänke
-de_noun GENITIVE(s)   = Bank*
 1.bench (which people sit on); workbench (which things can be set down on); pew
 2.a collection of material in a body of water:
 3.bank:
@@ -15,13 +13,11 @@ de_noun GENITIVE(s)   = Bank*
 	From Etymology 2 :
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Banken
-de_noun GENITIVE(s)   = Bank*
 1.bank (<i>financial institution</i>)
 2.a facility for storage of a particular thing:
 	========== Baum ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Bäume
-de_noun GENITIVE(s)   = Baums,Baumes
 de_noun DIMINUTIVE(s) = Bäumchen
 1.tree
 2.<span style="font-style:italic;color:#808080;">&lt;nautical&gt;</span> boom
@@ -29,29 +25,24 @@ de_noun DIMINUTIVE(s) = Bäumchen
 	========== Briefträger ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Briefträger
-de_noun GENITIVE(s)   = Briefträgers
 1.mailman, postman
 	========== Fisch ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Fische
-de_noun GENITIVE(s)   = Fisches
 1.fish (<i>animal</i>)
 2.fish (<i>food</i>)
 	========== Igel ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Igel
-de_noun GENITIVE(s)   = Igels
 1.hedgehog
 	========== Kellner ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kellner
-de_noun GENITIVE(s)   = Kellners*
  (<i>female:</i> Kellnerin)
 1.waiter
 	========== Kopf ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Köpfe
-de_noun GENITIVE(s)   = Kopfes,Kopfs
 1.<span style="font-style:italic;color:#808080;">&lt;anatomy&gt;</span> head
 2.crown, top
 3.heading, title
@@ -61,34 +52,28 @@ de_noun GENITIVE(s)   = Kopfes,Kopfs
 	========== Laterne ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Laternen
-de_noun GENITIVE(s)   = Laterne*
 1.lantern
 	========== Leiter ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Leitern
-de_noun GENITIVE(s)   = Leiter*
 1.ladder
 	From Etymology 2 :
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Leiter
-de_noun GENITIVE(s)   = Leiters
 1.conductor
 2.manager; leader
 	========== Mücke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Mücken
-de_noun GENITIVE(s)   = Mücke*
 1.mosquito
 	========== Mütze ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Mützen
-de_noun GENITIVE(s)   = Mütze*
 1.cap
 	========== Papier ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Papiere
-de_noun GENITIVE(s)   = Papiers,Papieres
 1.paper, a material used for writing or printing on, made from cellulose pulp rolled into thin sheets.
 2.<span style="font-style:italic;color:#808080;">&lt;legal&gt;</span> paper, document
 3.<span style="font-style:italic;color:#808080;">&lt;finance, stock market&gt;</span> security
@@ -96,80 +81,65 @@ de_noun GENITIVE(s)   = Papiers,Papieres
 de_noun:f=Pfarrerin
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Pfarrer
-de_noun GENITIVE(s)   = Pfarrers
 1.<span style="font-style:italic;color:#808080;">&lt;Christianity&gt;</span> clergyman, pastor
 	========== Pfarrerin ==========
 de_noun:m=Pfarrer
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Pfarrerinnen
-de_noun GENITIVE(s)   = Pfarrerin
 1.<span style="font-style:italic;color:#808080;">&lt;Christianity&gt;</span> clergywoman, female pastor
 	========== Pferd ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Pferde
-de_noun GENITIVE(s)   = Pferds,Pferdes
 1.horse
 2.<span style="font-style:italic;color:#808080;">&lt;chess&gt;</span> knight
 	========== Pfütze ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Pfützen
-de_noun GENITIVE(s)   = Pfütze*
 1.puddle, shallow pool
 	========== Puppe ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Puppen
-de_noun GENITIVE(s)   = Puppe*
 1.<span style="font-style:italic;color:#808080;">&lt;toy&gt;</span> doll
 2.<span style="font-style:italic;color:#808080;">&lt;zoology&gt;</span> pupa
 3.(slang) girl
 	========== Schrank ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Schränke
-de_noun GENITIVE(s)   = Schranks,Schrankes
 1.cupboard
 2.cabinet
 	========== Sofa ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Sofas
-de_noun GENITIVE(s)   = Sofas*
 1.sofa
 	========== Stall ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Ställe
-de_noun GENITIVE(s)   = Stalls,Stalles
 1.stable
 	========== Teller ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Teller
-de_noun GENITIVE(s)   = Tellers
 1.plate, dish
 	========== Teppich ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Teppiche
-de_noun GENITIVE(s)   = Teppichs
 1.carpet
 	========== Ticket ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Tickets
-de_noun GENITIVE(s)   = Tickets*
 1.ticket
 	========== Tuch ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Tücher
-de_noun GENITIVE(s)   = Tuchs,Tuches
 1.cloth
 	========== Wurm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Würmer
-de_noun GENITIVE(s)   = Wurms,Wurmes
 1.worm, maggot, grub
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Würme
-de_noun GENITIVE(s)   = Wurms,Wurmes
 1.(<i>poetic, heraldry</i>) lindworm, dragon, snake, serpent, reptile
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Würmer
-de_noun GENITIVE(s)   = Wurms,Wurmes
 1.(<i>colloquial</i>) mite, mite of a child
 	?????????? Buchhändler ?????????? : NOT FOUND
 	?????????? Camper ?????????? : NOT FOUND
