@@ -1,0 +1,65 @@
+	========== Augenblick ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Augenblicke
+de_noun GENITIVE(s)   = Augenblicks,Augenblickes
+1.moment (very short period of time)
+	========== Babysitter ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Babysitter
+de_noun GENITIVE(s)   = Babysitters
+1.babysitter
+	========== Besuch ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Besuche
+de_noun GENITIVE(s)   = Besuchs,Besuches
+1.visit, call
+	========== Drucker ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Drucker
+de_noun GENITIVE(s)   = Druckers
+1.printer
+2.person who prints
+	========== Ende ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Enden
+de_noun GENITIVE(s)   = Endes*
+1.end, finish
+2.conclusion
+	========== Fenster ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Fenster
+de_noun GENITIVE(s)   = Fensters
+1.window
+	========== Klasse ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Klassen
+de_noun GENITIVE(s)   = Klasse*
+1.class
+2.class (social grouping, based on job, wealth, etc.)
+	========== Licht ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Lichter,Lichte
+de_noun GENITIVE(s)   = Lichts,Lichtes
+1.light
+	========== Lust ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Lüste
+de_noun GENITIVE(s)   = Lust*
+1.pleasure, joy.
+2.desire, wish.
+	========== Schüler ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Schüler
+de_noun GENITIVE(s)   = Schülers
+1.<span style="font-style:italic;color:#808080;">&lt;school&gt;</span> pupil, student, schoolboy
+2.disciple
+	========== Tür ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Türen
+de_noun GENITIVE(s)   = Tür*
+1.a door
+	========== Unterricht ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = -
+de_noun GENITIVE(s)   = Unterrichts
+1.lesson, class, instruction, education

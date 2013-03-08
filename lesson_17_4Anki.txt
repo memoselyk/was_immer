@@ -1,0 +1,141 @@
+	========== Bonbon ==========
+GENDER        = das|009900 , der|0000ff
+PLURAL(s)     = Bonbons
+GENITIVE(s)   = Bonbons
+1.sweet, candy
+	========== Brücke ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Brücken
+de_noun GENITIVE(s)   = Brücke*
+1.bridge
+2.<span style="font-style:italic;color:#808080;">&lt;software, design&gt;</span> The bridge pattern.
+3.Synonym for &quot;der Pons&quot; referring to the Pons in the brain, &quot;bridging&quot; the brain stem with the rest of the brain.
+	========== Film ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Filme
+de_noun GENITIVE(s)   = Films,Filmes
+1.photographic film
+2.motion picture
+	========== Gedicht ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Gedichte
+de_noun GENITIVE(s)   = Gedichts,Gedichtes
+1.poem
+	========== Hand ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Hände
+de_noun GENITIVE(s)   = Hand*
+de_noun DIMINUTIVE(s) = Händchen,Händlein
+1.hand
+	========== Horrorfilm ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Horrorfilme
+de_noun GENITIVE(s)   = Horrorfilms,Horrorfilmes
+1.horror film
+	?????????? Hotelzimmer ?????????? : NOT FOUND
+	========== Hut ==========
+	From Etymology 1 :
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Hüte
+de_noun GENITIVE(s)   = Huts,Hutes
+de_noun DIMINUTIVE(s) = Hütchen
+1.hat
+2.cap, cover, lid
+	From Etymology 2 :
+GENDER(s)     = die|ff3399
+1.guard
+(only used in &quot;auf der Hut sein&quot; - to be on guard)
+	========== Kleidung ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Kleidungen
+de_noun GENITIVE(s)   = Kleidung*
+1.clothing; apparel
+	========== Kontakt ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Kontakte
+de_noun GENITIVE(s)   = Kontaktes,Kontakts
+1.contact
+2.junction
+	========== Meinung ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Meinungen
+de_noun GENITIVE(s)   = Meinung*
+1.opinion
+	========== Rasen ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Rasen
+de_noun GENITIVE(s)   = Rasens
+1.lawn
+	========== Regel ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Regeln
+de_noun GENITIVE(s)   = Regel*
+1.rule
+	========== Regisseur ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Regisseure
+de_noun GENITIVE(s)   = Regisseurs
+1.<span style="font-style:italic;color:#808080;">&lt;cinema, theater&gt;</span> director
+	========== Stern ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Sterne
+de_noun GENITIVE(s)   = Sternes,Sterns
+de_noun DIMINUTIVE(s) = Sternchen
+1.a star; a small luminous dot that can be seen on the night sky
+2.<span style="font-style:italic;color:#808080;">&lt;astronomy&gt;</span> a star; the actual celestial body
+3.<span style="font-style:italic;color:#808080;">&lt;geometry&gt;</span>  a star or anything that resembles such an object
+4.<span style="font-style:italic;color:#808080;">&lt;heraldry&gt;</span>  a star
+5.<span style="font-style:italic;color:#808080;">&lt;printing&gt;</span> an asterisk (*)
+6.<span style="font-style:italic;color:#808080;">&lt;metaphorical&gt;</span> a star, a celebrity, something or somebody popular
+7.a star; the symbol used to rate hotels, movies, etc.
+8.<span style="font-style:italic;color:#808080;">&lt;meteorology&gt;</span>  a stellar crystal, a snow crystal possessing the shape of a star
+	========== Steuer ==========
+	From Etymology 1 :
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Steuern
+de_noun GENITIVE(s)   = Steuer*
+1.tax
+	From Etymology 2 :
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Steuer
+de_noun GENITIVE(s)   = Steuers*
+1.helm
+	========== Strophe ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Strophen
+de_noun GENITIVE(s)   = Strophe*
+1.<span style="font-style:italic;color:#808080;">&lt;poetry&gt;</span> stanza (a unit of a poem)
+	========== Termin ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Termine
+de_noun GENITIVE(s)   = Termins,Termines
+1.date
+2.deadline
+3.appointment
+	========== Tiger ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Tiger
+de_noun GENITIVE(s)   = Tigers
+1.tiger
+	?????????? Toilettenwand ?????????? : NOT FOUND
+	========== Träne ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Tränen
+de_noun GENITIVE(s)   = Träne*
+1.tear
+	========== Vitamin ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Vitamine
+de_noun GENITIVE(s)   = Vitamins
+1.vitamin
+	========== Wand ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Wände
+de_noun GENITIVE(s)   = Wand*
+1.wall, partition
+2.precipice
+	========== Zigarette ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Zigaretten
+de_noun GENITIVE(s)   = Zigarette*
+1.cigarette

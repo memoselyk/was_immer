@@ -1,0 +1,202 @@
+	========== Anschluss ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Anschlüsse
+de_noun GENITIVE(s)   = Anschlusses
+1.connection, joining
+2.annexation
+3.<span style="font-style:italic;color:#808080;">&lt;historical&gt;</span> Anschluss
+4.contact
+	========== Ausflug ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Ausflüge
+de_noun GENITIVE(s)   = Ausflugs,Ausfluges
+1.excursion
+	========== Burg ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Burgen
+de_noun GENITIVE(s)   = Burg*
+1.castle, fortification
+	========== Bushaltestelle ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Bushaltestellen
+de_noun GENITIVE(s)   = Bushaltestelle*
+1.bus stop
+	========== Café ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Cafés
+de_noun GENITIVE(s)   = Cafés
+1.café, coffee shop
+	?????????? Computergeschäft ?????????? : NOT FOUND
+	========== Dom ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Dome
+de_noun GENITIVE(s)   = Doms,Domes
+1.cathedral dome
+	========== Doppelzimmer ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Doppelzimmer
+de_noun GENITIVE(s)   = Doppelzimmers
+1.double room
+	========== Ecke ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Ecken
+de_noun GENITIVE(s)   = Ecke*
+1.corner
+2.<span style="font-style:italic;color:#808080;">&lt;graph theory&gt;</span> vertex, node
+3.<span style="font-style:italic;color:#808080;">&lt;football&gt;</span> corner
+	========== Einzelzimmer ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Einzelzimmer
+de_noun GENITIVE(s)   = Einzelzimmers
+1.single room
+	========== Entschuldigung ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Entschuldigungen
+de_noun GENITIVE(s)   = Entschuldigung*
+1.apology
+2.excuse
+	?????????? Fahrradvermietung ?????????? : NOT FOUND
+	========== Frühstück ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Frühstücke
+de_noun GENITIVE(s)   = Frühstücks,Frühstückes
+1.breakfast
+	========== Geschäft ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Geschäfte
+de_noun GENITIVE(s)   = Geschäfts,Geschäftes
+1.shop; store
+2.business
+3.business activity
+4.transaction
+	?????????? Halbpension ?????????? : NOT FOUND
+	========== Haltestelle ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Haltestellen
+de_noun GENITIVE(s)   = Haltestelle*
+1.stop (place to get on and off line buses or trams)
+	========== Hauptstraße ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Hauptstraßen
+de_noun GENITIVE(s)   = Hauptstraße*
+1.main road
+	?????????? Internet-Anschluss ?????????? : NOT FOUND
+	========== Kindergarten ==========
+'''Kindergarten''' ''m'' (genitive singular: '''Kindergartens'''; ''all plural cases:'' '''Kindergärten''')
+1.nursery school, kindergarten
+	========== Kirche ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Kirchen
+de_noun GENITIVE(s)   = Kirche*
+1.church (building)
+2.church (organised religion, especially Catholicism)
+	========== Konzert ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Konzerte
+de_noun GENITIVE(s)   = Konzerts,Konzertes
+1.concert (musical event)
+2.concerto
+	?????????? Konzertkarte ?????????? : NOT FOUND
+	========== Kreuzung ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Kreuzungen
+de_noun GENITIVE(s)   = Kreuzung*
+1.<span style="font-style:italic;color:#808080;">&lt;streets&gt;</span> crossing, intersection
+2.<span style="font-style:italic;color:#808080;">&lt;biology&gt;</span> crossbreeding
+3.<span style="font-style:italic;color:#808080;">&lt;biology&gt;</span> crossbreed
+	========== Lokal ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Lokale
+de_noun GENITIVE(s)   = Lokals
+1.restaurant
+	========== Nacht ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Nächte
+de_noun GENITIVE(s)   = Nacht*
+1.night
+2.darkness
+	========== Nähe ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = -
+de_noun GENITIVE(s)   = Nähe*
+1.vicinity
+	========== Post ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = -
+de_noun GENITIVE(s)   = Post*
+1.<span style="font-style:italic;color:#808080;">&lt;method of sending mail, mail sent by this method&gt;</span> post
+2.post office
+	========== Rathaus ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Rathäuser
+de_noun GENITIVE(s)   = Rathauses
+1.the house in which the city council meets; city hall, town hall
+	========== Regen ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = -
+de_noun GENITIVE(s)   = Regens
+1.rain
+	?????????? Reisebüro ?????????? : NOT FOUND
+	========== Schloss ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Schlösser
+de_noun GENITIVE(s)   = Schlosses
+1.lock
+2.castle (château, palace, not fortified)
+	========== Schule ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Schulen
+de_noun GENITIVE(s)   = Schule*
+1.school
+	========== Schwimmbad ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Schwimmbäder
+de_noun GENITIVE(s)   = Schwimmbads,Schwimmbades
+1.public pool, public swimming pool, baths
+	========== Sehenswürdigkeit ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Sehenswürdigkeiten
+de_noun GENITIVE(s)   = Sehenswürdigkeit*
+1.something worth seeing, a sight, tourist attraction
+	?????????? Sportplatz ?????????? : NOT FOUND
+	========== Straßenbahn ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Straßenbahnen
+de_noun GENITIVE(s)   = Straßenbahn*
+1.a streetcar, tramway
+	?????????? Straßenbahnhaltestelle ?????????? : NOT FOUND
+	========== Stück ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Stücke
+de_noun GENITIVE(s)   = Stücks,Stückes
+1.piece
+	========== Telefonzelle ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Telefonzellen
+de_noun GENITIVE(s)   = Telefonzelle*
+1.telephone booth
+	?????????? Tennisplatz ?????????? : NOT FOUND
+	?????????? Touristeninformation ?????????? : NOT FOUND
+	========== Übernachtung ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Übernachtungen
+de_noun GENITIVE(s)   = Übernachtung*
+1.overnight stay
+	========== Ursache ==========
+de_noun GENDER(s)     = die|ff3399
+de_noun PLURAL(s)     = Ursachen
+de_noun GENITIVE(s)   = Ursache*
+1.cause (source or reason of an event or action)
+	?????????? Vollpension ?????????? : NOT FOUND
+	?????????? Wanderweg ?????????? : NOT FOUND
+	========== Weg ==========
+de_noun GENDER(s)     = der|0000ff
+de_noun PLURAL(s)     = Wege
+de_noun GENITIVE(s)   = Wegs,Weges
+1.way
+2.path
+	========== Zimmer ==========
+de_noun GENDER(s)     = das|009900
+de_noun PLURAL(s)     = Zimmer
+de_noun GENITIVE(s)   = Zimmers
+1.room
