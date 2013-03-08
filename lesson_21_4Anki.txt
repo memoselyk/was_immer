@@ -1,7 +1,7 @@
 	========== Bäckerei ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Bäckereien
-1.bakery
+bakery
 	========== Bank ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = die|ff3399
@@ -25,7 +25,7 @@ de_noun DIMINUTIVE(s) = Bäumchen
 	========== Briefträger ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Briefträger
-1.mailman, postman
+mailman, postman
 	========== Fisch ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Fische
@@ -34,12 +34,12 @@ de_noun PLURAL(s)     = Fische
 	========== Igel ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Igel
-1.hedgehog
+hedgehog
 	========== Kellner ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kellner
  (<i>female:</i> Kellnerin)
-1.waiter
+waiter
 	========== Kopf ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Köpfe
@@ -52,12 +52,12 @@ de_noun PLURAL(s)     = Köpfe
 	========== Laterne ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Laternen
-1.lantern
+lantern
 	========== Leiter ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Leitern
-1.ladder
+ladder
 	From Etymology 2 :
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Leiter
@@ -66,11 +66,11 @@ de_noun PLURAL(s)     = Leiter
 	========== Mücke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Mücken
-1.mosquito
+mosquito
 	========== Mütze ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Mützen
-1.cap
+cap
 	========== Papier ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Papiere
@@ -81,12 +81,12 @@ de_noun PLURAL(s)     = Papiere
 de_noun:f=Pfarrerin
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Pfarrer
-1.<span style="font-style:italic;color:#808080;">&lt;Christianity&gt;</span> clergyman, pastor
+<span style="font-style:italic;color:#808080;">&lt;Christianity&gt;</span> clergyman, pastor
 	========== Pfarrerin ==========
 de_noun:m=Pfarrer
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Pfarrerinnen
-1.<span style="font-style:italic;color:#808080;">&lt;Christianity&gt;</span> clergywoman, female pastor
+<span style="font-style:italic;color:#808080;">&lt;Christianity&gt;</span> clergywoman, female pastor
 	========== Pferd ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Pferde
@@ -95,7 +95,7 @@ de_noun PLURAL(s)     = Pferde
 	========== Pfütze ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Pfützen
-1.puddle, shallow pool
+puddle, shallow pool
 	========== Puppe ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Puppen
@@ -110,37 +110,37 @@ de_noun PLURAL(s)     = Schränke
 	========== Sofa ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Sofas
-1.sofa
+sofa
 	========== Stall ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Ställe
-1.stable
+stable
 	========== Teller ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Teller
-1.plate, dish
+plate, dish
 	========== Teppich ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Teppiche
-1.carpet
+carpet
 	========== Ticket ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Tickets
-1.ticket
+ticket
 	========== Tuch ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Tücher
-1.cloth
+cloth
 	========== Wurm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Würmer
-1.worm, maggot, grub
+worm, maggot, grub
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Würme
-1.(<i>poetic, heraldry</i>) lindworm, dragon, snake, serpent, reptile
+(<i>poetic, heraldry</i>) lindworm, dragon, snake, serpent, reptile
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Würmer
-1.(<i>colloquial</i>) mite, mite of a child
+(<i>colloquial</i>) mite, mite of a child
 	?????????? Buchhändler ?????????? : NOT FOUND
 	?????????? Camper ?????????? : NOT FOUND
 	?????????? Mofa ?????????? : NOT FOUND

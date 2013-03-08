@@ -1,15 +1,15 @@
 	========== Anruf ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Anrufe
-1.(phone) call
+(phone) call
 	========== Büro ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Büros
-1.office
+office
 	========== Chefin ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Chefinnen
-1.female boss
+female boss
 	========== Mitarbeiter ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Mitarbeiter
@@ -29,7 +29,7 @@ de_noun PLURAL(s)     = Notizen
 	========== Parkhaus ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Parkhäuser
-1.parking garage, multi-storey car park
+parking garage, multi-storey car park
 	========== Schlüssel ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Schlüssel
@@ -39,7 +39,7 @@ de_noun PLURAL(s)     = Schlüssel
 	========== Taube ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Tauben
-1.dove, pigeon
+dove, pigeon
 	========== Turm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Türme
@@ -50,11 +50,11 @@ de_noun PLURAL(s)     = Türme
 	========== Waschmaschine ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Waschmaschinen
-1.washing machine
+washing machine
 	========== Wochenende ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Wochenenden
-1.weekend
+weekend
 	?????????? Fernsehfilm ?????????? : NOT FOUND
 	?????????? Kundendienst ?????????? : NOT FOUND
 	?????????? Notizzettel ?????????? : NOT FOUND

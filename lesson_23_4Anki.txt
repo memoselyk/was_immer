@@ -1,7 +1,7 @@
 	========== Ankunft ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ankünfte
-1.arrival
+arrival
 	========== Anschluss ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Anschlüsse
@@ -12,11 +12,11 @@ de_noun PLURAL(s)     = Anschlüsse
 	========== Café ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Cafés
-1.café, coffee shop
+café, coffee shop
 	========== Bahnsteig ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Bahnsteige
-1.train platform
+train platform
 	========== Laden ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Läden
@@ -30,40 +30,40 @@ de_noun PLURAL(s)     = Decken
 3.skin
 4.pretext
 '''Decke''' (plural of ''Deck'')
-1.decks
+decks
 	========== Ehepaar ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Ehepaare
-1.married couple
+married couple
 	========== Einbrecher ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Einbrecher
-1.burglar, picklock, housebreaker
+burglar, picklock, housebreaker
 	========== Einladung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Einladungen
-1.invitation
+invitation
 	========== Essen ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Essen
-1.meal
+meal
 	From Etymology 2 :
 {{head|de|noun form}}
-1.plural form of '''Esse'''
+plural form of '''Esse'''
 	========== Flughafen ==========
 de_noun:[0]UNDEF=
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Flughäfen
-1.airport
+airport
 	========== Gast ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Gäste
-1.guest
+guest
 	========== Getränk ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Getränke
-1.drink
+drink
 	========== Glas ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Gläser
@@ -77,15 +77,15 @@ de_noun PLURAL(s)     = Glasen
 	========== Käfig ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Käfige
-1.cage
+cage
 	========== Kartoffelsalat ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kartoffelsalate
-1.potato salad
+potato salad
 	========== Salat ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Salate
-1.salad, lettuce
+salad, lettuce
 	========== Keller ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Keller
@@ -93,7 +93,7 @@ de_noun PLURAL(s)     = Keller
 2.basement
 	========== Ketchup ==========
 {{head|de|noun|g=m|g2=n}}
-1.ketchup
+ketchup
 	========== Laden ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Läden
@@ -110,7 +110,7 @@ de_noun PLURAL(s)     = Plätze
 	========== Party ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Partys
-1.<span style="font-style:italic;color:#808080;">&lt;social gathering&gt;</span> party
+<span style="font-style:italic;color:#808080;">&lt;social gathering&gt;</span> party
 	========== Platz ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Plätze
@@ -131,17 +131,17 @@ de_noun PLURAL(s)     = Räume
 	========== See ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Seen
-1.lake
+lake
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = -
-1.sea
+sea
 	========== Senf ==========
 <b>Senf</b> {{m}}
-1.mustard
+mustard
 	========== Sportler ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Sportler
-1.sportsman (male athlete)
+sportsman (male athlete)
 	========== Station ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Stationen
@@ -151,7 +151,7 @@ de_noun PLURAL(s)     = Stationen
 	========== Suppe ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Suppen
-1.soup
+soup
 	========== Tafel ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Tafeln
@@ -165,23 +165,23 @@ de_noun PLURAL(s)     = Tafeln
 	========== Taxifahrer ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Taxifahrer
-1.taxi driver, cabdriver, cabbie
+taxi driver, cabdriver, cabbie
 	========== Salat ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Salate
-1.salad, lettuce
+salad, lettuce
 	========== Vase ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Vasen
-1.vase
+vase
 	========== Verspätung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Verspätungen
-1.delay, lateness, late arrival
+delay, lateness, late arrival
 	========== Wald ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Wälder
-1.forest, wood, woods, woodland
+forest, wood, woods, woodland
 	========== Flasche ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Flaschen
@@ -191,7 +191,7 @@ de_noun PLURAL(s)     = Flaschen
 	========== Wurst ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Würste
-1.sausage
+sausage
 	?????????? Ansage ?????????? : NOT FOUND
 	?????????? Bahnhofscafé ?????????? : NOT FOUND
 	?????????? Blumenladen ?????????? : NOT FOUND

@@ -8,27 +8,27 @@ de_noun PLURAL(s)     = Anschlüsse
 	========== Ausflug ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Ausflüge
-1.excursion
+excursion
 	========== Burg ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Burgen
-1.castle, fortification
+castle, fortification
 	========== Bushaltestelle ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Bushaltestellen
-1.bus stop
+bus stop
 	========== Café ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Cafés
-1.café, coffee shop
+café, coffee shop
 	========== Dom ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Dome
-1.cathedral dome
+cathedral dome
 	========== Doppelzimmer ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Doppelzimmer
-1.double room
+double room
 	========== Ecke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ecken
@@ -38,7 +38,7 @@ de_noun PLURAL(s)     = Ecken
 	========== Einzelzimmer ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Einzelzimmer
-1.single room
+single room
 	========== Entschuldigung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Entschuldigungen
@@ -47,7 +47,7 @@ de_noun PLURAL(s)     = Entschuldigungen
 	========== Frühstück ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Frühstücke
-1.breakfast
+breakfast
 	========== Geschäft ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Geschäfte
@@ -58,14 +58,14 @@ de_noun PLURAL(s)     = Geschäfte
 	========== Haltestelle ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Haltestellen
-1.stop (place to get on and off line buses or trams)
+stop (place to get on and off line buses or trams)
 	========== Hauptstraße ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Hauptstraßen
-1.main road
+main road
 	========== Kindergarten ==========
 '''Kindergarten''' ''m'' (genitive singular: '''Kindergartens'''; ''all plural cases:'' '''Kindergärten''')
-1.nursery school, kindergarten
+nursery school, kindergarten
 	========== Kirche ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Kirchen
@@ -85,7 +85,7 @@ de_noun PLURAL(s)     = Kreuzungen
 	========== Lokal ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Lokale
-1.restaurant
+restaurant
 	========== Nacht ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Nächte
@@ -94,7 +94,7 @@ de_noun PLURAL(s)     = Nächte
 	========== Nähe ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = -
-1.vicinity
+vicinity
 	========== Post ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = -
@@ -103,11 +103,11 @@ de_noun PLURAL(s)     = -
 	========== Rathaus ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Rathäuser
-1.the house in which the city council meets; city hall, town hall
+the house in which the city council meets; city hall, town hall
 	========== Regen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = -
-1.rain
+rain
 	========== Schloss ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Schlösser
@@ -116,35 +116,35 @@ de_noun PLURAL(s)     = Schlösser
 	========== Schule ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Schulen
-1.school
+school
 	========== Schwimmbad ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Schwimmbäder
-1.public pool, public swimming pool, baths
+public pool, public swimming pool, baths
 	========== Sehenswürdigkeit ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Sehenswürdigkeiten
-1.something worth seeing, a sight, tourist attraction
+something worth seeing, a sight, tourist attraction
 	========== Straßenbahn ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Straßenbahnen
-1.a streetcar, tramway
+a streetcar, tramway
 	========== Stück ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Stücke
-1.piece
+piece
 	========== Telefonzelle ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Telefonzellen
-1.telephone booth
+telephone booth
 	========== Übernachtung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Übernachtungen
-1.overnight stay
+overnight stay
 	========== Ursache ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ursachen
-1.cause (source or reason of an event or action)
+cause (source or reason of an event or action)
 	========== Weg ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Wege
@@ -153,7 +153,7 @@ de_noun PLURAL(s)     = Wege
 	========== Zimmer ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Zimmer
-1.room
+room
 	?????????? Computergeschäft ?????????? : NOT FOUND
 	?????????? Fahrradvermietung ?????????? : NOT FOUND
 	?????????? Halbpension ?????????? : NOT FOUND

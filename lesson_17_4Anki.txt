@@ -2,7 +2,7 @@
 GENDER        = das|009900 , der|0000ff
 PLURAL(s)     = Bonbons
 GENITIVE(s)   = Bonbons
-1.sweet, candy
+sweet, candy
 	========== Brücke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Brücken
@@ -17,16 +17,16 @@ de_noun PLURAL(s)     = Filme
 	========== Gedicht ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Gedichte
-1.poem
+poem
 	========== Hand ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Hände
 de_noun DIMINUTIVE(s) = Händchen,Händlein
-1.hand
+hand
 	========== Horrorfilm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Horrorfilme
-1.horror film
+horror film
 	========== Hut ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = der|0000ff
@@ -36,12 +36,12 @@ de_noun DIMINUTIVE(s) = Hütchen
 2.cap, cover, lid
 	From Etymology 2 :
 GENDER(s)     = die|ff3399
-1.guard
+guard
 (only used in &quot;auf der Hut sein&quot; - to be on guard)
 	========== Kleidung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Kleidungen
-1.clothing; apparel
+clothing; apparel
 	========== Kontakt ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kontakte
@@ -50,19 +50,19 @@ de_noun PLURAL(s)     = Kontakte
 	========== Meinung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Meinungen
-1.opinion
+opinion
 	========== Rasen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Rasen
-1.lawn
+lawn
 	========== Regel ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Regeln
-1.rule
+rule
 	========== Regisseur ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Regisseure
-1.<span style="font-style:italic;color:#808080;">&lt;cinema, theater&gt;</span> director
+<span style="font-style:italic;color:#808080;">&lt;cinema, theater&gt;</span> director
 	========== Stern ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Sterne
@@ -79,15 +79,15 @@ de_noun DIMINUTIVE(s) = Sternchen
 	From Etymology 1 :
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Steuern
-1.tax
+tax
 	From Etymology 2 :
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Steuer
-1.helm
+helm
 	========== Strophe ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Strophen
-1.<span style="font-style:italic;color:#808080;">&lt;poetry&gt;</span> stanza (a unit of a poem)
+<span style="font-style:italic;color:#808080;">&lt;poetry&gt;</span> stanza (a unit of a poem)
 	========== Termin ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Termine
@@ -97,15 +97,15 @@ de_noun PLURAL(s)     = Termine
 	========== Tiger ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Tiger
-1.tiger
+tiger
 	========== Träne ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Tränen
-1.tear
+tear
 	========== Vitamin ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Vitamine
-1.vitamin
+vitamin
 	========== Wand ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Wände
@@ -114,6 +114,6 @@ de_noun PLURAL(s)     = Wände
 	========== Zigarette ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zigaretten
-1.cigarette
+cigarette
 	?????????? Hotelzimmer ?????????? : NOT FOUND
 	?????????? Toilettenwand ?????????? : NOT FOUND

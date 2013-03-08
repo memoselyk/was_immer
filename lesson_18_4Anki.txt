@@ -1,15 +1,15 @@
 	========== Augenblick ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Augenblicke
-1.moment (very short period of time)
+moment (very short period of time)
 	========== Babysitter ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Babysitter
-1.babysitter
+babysitter
 	========== Besuch ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Besuche
-1.visit, call
+visit, call
 	========== Drucker ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Drucker
@@ -23,7 +23,7 @@ de_noun PLURAL(s)     = Enden
 	========== Fenster ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Fenster
-1.window
+window
 	========== Klasse ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Klassen
@@ -32,7 +32,7 @@ de_noun PLURAL(s)     = Klassen
 	========== Licht ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Lichter,Lichte
-1.light
+light
 	========== Lust ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Lüste
@@ -46,7 +46,7 @@ de_noun PLURAL(s)     = Schüler
 	========== Tür ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Türen
-1.a door
+a door
 	========== Unterricht ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = -

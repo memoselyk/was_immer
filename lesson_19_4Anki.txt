@@ -1,23 +1,23 @@
 	========== Delfin ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Delfine
-1.<i>alternative spelling of</i> Delphin
+<i>alternative spelling of</i> Delphin
 	========== Idee ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ideen
-1.idea
+idea
 	========== Papagei ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Papageien
-1.parrot
+parrot
 	========== Rekorder ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Rekorder
-1.<span style="font-style:italic;color:#808080;">&lt;device&gt;</span> recorder
+<span style="font-style:italic;color:#808080;">&lt;device&gt;</span> recorder
 	========== Ski ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Skier
-1.ski
+ski
 	========== Zeit ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zeiten

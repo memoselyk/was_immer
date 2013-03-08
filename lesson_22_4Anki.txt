@@ -1,7 +1,7 @@
 	========== Apotheke ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Apotheken
-1.pharmacy
+pharmacy
 	========== Arm ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Arme
@@ -14,21 +14,21 @@ de_noun DIMINUTIVE(s) = Ärmchen
 	========== Arzt ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Ärzte
-1.doctor, physician.
+doctor, physician.
 	========== Ärztin ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Ärztinnen
-1.female doctor or physician.
+female doctor or physician.
 	========== Augenarzt ==========
 de_noun:f=Augenärztin
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Augenärzte
-1.ophthalmologist, eye doctor
+ophthalmologist, eye doctor
 	========== Autofahrer ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Autofahrer
  '''Autofahrerin''' ''f''
-1.the driver of a car, a motorist
+the driver of a car, a motorist
 	========== Bein ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Beine
@@ -37,7 +37,7 @@ de_noun PLURAL(s)     = Beine
 	========== Bericht ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Berichte
-1.report
+report
 	========== Besucher ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Besucher
@@ -51,7 +51,7 @@ de_noun PLURAL(s)     = Brüste
 	========== Buchhandlung ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Buchhandlungen
-1.bookstore, bookshop
+bookstore, bookshop
 	========== Doktor ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Doktoren
@@ -75,7 +75,7 @@ de_noun PLURAL(s)     = Eingänge
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Fahrer
 '''{{l|de|Fahrerin}}''' ''f''
-1.a driver (person)
+a driver (person)
 	========== Fahrt ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Fahrten
@@ -85,16 +85,16 @@ de_noun PLURAL(s)     = Fahrten
 de_noun:f=Feuerwehrfrau
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Feuerwehrleute,Feuerwehrmänner
-1.fireman, firefighter
+fireman, firefighter
 	========== Feuerwehrfrau ==========
 de_noun:m=Feuerwehrmann
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Feuerwehrfrauen
-1.firewoman, female firefighter
+firewoman, female firefighter
 	========== Hafen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Häfen
-1.harbor, harbour; port; haven
+harbor, harbour; port; haven
 	========== Haken ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Haken
@@ -109,12 +109,12 @@ de_noun PLURAL(s)     = Jobs
 	========== Kinderwagen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Kinderwagen,Kinderwägen
-1.baby carriage, stroller (<i>US</i>); pram (<i>UK</i>)
+baby carriage, stroller (<i>US</i>); pram (<i>UK</i>)
 	========== Krankenhaus ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Krankenhäuser
 de_noun DIMINUTIVE(s) = Krankenhäuschen
-1.hospital
+hospital
 	========== Notaufnahme ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Notaufnahmen
@@ -133,7 +133,7 @@ de_noun PLURAL(s)     = Orte
 	========== Personenwagen ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Personenwägen
-1.<span style="font-style:italic;color:#808080;">&lt;railway&gt;</span> passenger car
+<span style="font-style:italic;color:#808080;">&lt;railway&gt;</span> passenger car
 	========== Praxis ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Praxen
@@ -147,7 +147,7 @@ de_noun PLURAL(s)     = Reaktionen
 	========== Sanitäter ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Sanitäter
-1.medic, ambulance man, paramedic, EMT
+medic, ambulance man, paramedic, EMT
 	========== Schiff ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Schiffe
@@ -161,7 +161,7 @@ de_noun PLURAL(s)     = Schirme
 	========== Schmerz ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Schmerzen
-1.ache, pain
+ache, pain
 	========== Tempo ==========
 de_noun GENDER(s)     = das|009900
 de_noun PLURAL(s)     = Tempi,Tempos
@@ -170,11 +170,11 @@ de_noun PLURAL(s)     = Tempi,Tempos
 	========== Tod ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Tode
-1.death
+death
 	========== Uniform ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Uniformen
-1.uniform (distinctive outfit as a means of identifying members of a group)
+uniform (distinctive outfit as a means of identifying members of a group)
 	========== Verkehr ==========
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Verkehre
@@ -183,20 +183,20 @@ de_noun PLURAL(s)     = Verkehre
 	========== Vorsicht ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = -
-1.caution, cautiousness
+caution, cautiousness
 	========== Zahnarzt ==========
 de_noun:f=Zahnärztin
 de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Zahnärzte
-1.dentist
+dentist
 	========== Zahnarztpraxis ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zahnarztpraxen
-1.dentist's practice
+dentist's practice
 	========== Zentrale ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zentralen
-1.central office, headquarters
+central office, headquarters
 	?????????? Arztpraxis ?????????? : NOT FOUND
 	?????????? Blumenhändlerin ?????????? : NOT FOUND
 	?????????? Frisörgeschäft ?????????? : NOT FOUND
