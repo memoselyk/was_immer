@@ -1,7 +1,6 @@
 	========== Bonbon ==========
 GENDER        = das|009900 , der|0000ff
 PLURAL(s)     = Bonbons
-GENITIVE(s)   = Bonbons
 sweet, candy
 	========== Brücke ==========
 de_noun GENDER(s)     = die|ff3399
