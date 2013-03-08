@@ -32,7 +32,6 @@ de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Horrorfilme
 de_noun GENITIVE(s)   = Horrorfilms,Horrorfilmes
 1.horror film
-	?????????? Hotelzimmer ?????????? : NOT FOUND
 	========== Hut ==========
 	From Etymology 1 :
 de_noun GENDER(s)     = der|0000ff
@@ -117,7 +116,6 @@ de_noun GENDER(s)     = der|0000ff
 de_noun PLURAL(s)     = Tiger
 de_noun GENITIVE(s)   = Tigers
 1.tiger
-	?????????? Toilettenwand ?????????? : NOT FOUND
 	========== Träne ==========
 de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Tränen
@@ -139,3 +137,5 @@ de_noun GENDER(s)     = die|ff3399
 de_noun PLURAL(s)     = Zigaretten
 de_noun GENITIVE(s)   = Zigarette*
 1.cigarette
+	?????????? Hotelzimmer ?????????? : NOT FOUND
+	?????????? Toilettenwand ?????????? : NOT FOUND
