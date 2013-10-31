@@ -103,10 +103,10 @@ def get_definition(word, on_browser=False):
     return parsed_data
 
 def parse_german_noun_for_anki(parsed_data):
-    global logNoun  # To share it with templates
-    logNoun = logging.getLogger('def.wiki.noun')
+    return parse_german_data_for_anki(parsed_data, part_of_speech='noun')
 
-    # FIXME: Some Nouns are the plural form of another word, log those instances somewhere
+def parse_german_data_for_anki(parsed_data, part_of_speech=None) :
+    logGerman = logging.getLogger('wiki.german')
 
     # TODO: Log the related terms, derived terms to expand vocabulary
 
@@ -119,7 +119,7 @@ def parse_german_noun_for_anki(parsed_data):
 
     if 'German' not in parsed_data :
         # TODO: Should print in a file, or log it some where
-        logNoun.critical('%s %s %s : NOT FOUND' % ('=' * 10, word, '=' * 10))
+        logGerman.critical('%s %s %s : NOT FOUND' % ('=' * 10, word, '=' * 10))
         print '\t', '?' * 10, word, '?' * 10, ': NOT FOUND'
         return False
 
@@ -130,11 +130,26 @@ def parse_german_noun_for_anki(parsed_data):
     def output_section(data_dict, lvl=''):
         #for section in [ k for k in data_dict if k[0] != '_' ] :
         for section in data_dict :
-            logNoun.info('%s%s : %s' % (lvl, section, type(data_dict[section])))
-            #logNoun.debug(lvl + section)
+            logGerman.info('%s%s : %s' % (lvl, section, type(data_dict[section])))
+            #logGerman.debug(lvl + section)
             if section[0] != '_' :
                 output_section(data_dict[section], lvl + '-')
-    #output_section( german_def )
+    output_section( german_def )
+
+    posToFunc = {
+        'noun' : _parse_german_noun_for_anki,
+    }
+
+    dataParser = posToFunc.get(part_of_speech.lower())
+    if dataParser is None :
+        raise ValueError('Parser for POS=%s not found!' % part_of_speech)
+    else :
+        dataParser(german_def, word)
+
+def _parse_german_noun_for_anki(german_def, word):
+    logNoun = logging.getLogger('wiki.noun')
+
+    # FIXME: Some Nouns are the plural form of another word, log those instances somewhere
 
     # TODO
     #if 'Etymology' in german_def :
@@ -230,7 +245,7 @@ def parse_german_noun_for_anki(parsed_data):
                 logNoun.debug('Would process template: %s with %r and %r' % (name, list_args, kw_args))
 
                 try :
-                    replacement = getattr(template_processor, name.replace('-', '_'))(*list_args, **kw_args)
+                    replacement = getattr(template_processor, name.replace('-', '_'))(logNoun, *list_args, **kw_args)
                 except AttributeError :
                     logNoun.critical('Template processor "%s" not found!' % name)
                     replacement = match.group(0)#''
@@ -255,12 +270,12 @@ class Templates(object):
                 'legal', 'linguistics',
                 'meteorology', 'nautical', 'obsolete', 'poetry', 'printing', 'software', 'sports',
                 'textiles'] :
-            return lambda *a, **k : Templates.context(*([name]+list(a)), **k)
+            return lambda l, *a, **k : Templates.context(l, *([name]+list(a)), **k)
         else :
             raise AttributeError
 
     @staticmethod
-    def context(*args, **kw_args):
+    def context(log, *args, **kw_args):
         kw_args.pop('lang', '')
         args_list = list(args)
         if 'or' in args_list : args_list.remove('or')
@@ -268,7 +283,7 @@ class Templates(object):
                 '&lt;%s&gt;</span>' % ', '.join(args_list + [ '%s=%s' % (k,kw_args[k]) for k in kw_args ]))
 
     @staticmethod
-    def de_noun(*args, **kw_args):
+    def de_noun(log, *args, **kw_args):
         #
         # gender: g, g1, g2
         # genitive: gen*, -s, {{{1}}}
@@ -303,7 +318,7 @@ class Templates(object):
 
             if cat_list is not None : cat_list.append(kw_args[arg_name])
             else :
-                logNoun.error('Unknown category : %s' % arg_name)
+                log.error('Unknown category : %s' % arg_name)
                 print 'de_noun:%s=%s' % (arg_name, kw_args[arg_name])
                 continue
 
@@ -343,13 +358,13 @@ class Templates(object):
         return ''
 
     @staticmethod
-    def gloss(*args, **kw_args):
+    def gloss(log, *args, **kw_args):
         return ' '.join(
                 ['(%s)' % t for t in args] + 
                 ['gloss:%s="%s"' % (k, kw_args[k]) for k in kw_args ])
 
     @staticmethod
-    def term(*args, **kw_args):
+    def term(log, *args, **kw_args):
         interlink   = args[0]
         disp_text   = args[1] if len(args) >= 2 else ''
         translation = args[2] if len(args) >= 3 else ''
@@ -361,7 +376,7 @@ class Templates(object):
             return '%s ("%s")' % (disp_text, translation)
 
     @staticmethod
-    def qualifier(*args, **kw_args):
+    def qualifier(log, *args, **kw_args):
         return ' '.join(
                 ['(<i>%s</i>)' % t for t in args] + 
                 ['qualifier:%s="%s"' % (k, kw_args[k]) for k in kw_args ])
