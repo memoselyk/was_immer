@@ -73,11 +73,11 @@ class LogRecordSocketReceiver(SocketServer.ThreadingTCPServer):
                 self.handle_request()
             abort = self.abort
 
-def main(colored_output=True):
+def main(logLevel, colored_output=True):
     # TODO: Colored output is relies on ANSI color codes, Windows needs to be supported somehow
     if colored_output :
         colored_console = logging.StreamHandler()
-        colored_console.setLevel(logging.WARN)     # Full Logging
+        colored_console.setLevel(logLevel)
         colored_console.setFormatter(AnsiColorFormatter("%(relativeCreated)5d %(name)-15s %(levelname)-8s %(message)s"))
         logging.getLogger().addHandler(colored_console)
     else :
@@ -88,4 +88,30 @@ def main(colored_output=True):
     tcpserver.serve_until_stopped()
 
 if __name__ == "__main__":
-    main()
+    import sys
+    defaultLevel  = logging.WARNING  # Default log level (just print errors)
+    logLevelToSet = None
+    if len(sys.argv) >= 2 :
+        levelArg = sys.argv[1]
+        validLogLevels = [
+                "DEBUG",
+                "INFO",
+                "WARNING",
+                "ERROR",
+                "CRITICAL",
+            ]
+        possibleLevels = filter(lambda l : l.startswith(levelArg.upper()), validLogLevels)
+        if len(possibleLevels) > 0 :
+            try :
+                logLevelToSet = getattr(logging, possibleLevels[0])
+                print 'LogLevel set to %s from argument %s' % (possibleLevels[0], levelArg)
+            except AttributeError :
+                pass
+
+    if logLevelToSet is None :
+        logLevel = defaultLevel
+        print 'LogLevel defaulted to WARNING'
+    else :
+        logLevel = logLevelToSet
+
+    main(logLevel)
