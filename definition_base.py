@@ -81,8 +81,9 @@ class BaseDataSource(object):
     #
     # File mode, caches the page to a temp file
     #
-    _file_mode = True
-    _cache_dir = 'cache'    # Subfolder in os.curdir
+    _file_mode     = True
+    _refresh_cache = False      # Get from web and replace cache
+    _cache_dir     = 'cache'    # Subfolder in os.curdir
     logger = logging.getLogger('def.base')
 
     def __init__(self, work_host=None, url_base=None):
@@ -100,7 +101,7 @@ class BaseDataSource(object):
             headers = None
             filen = filename
 
-            if not os.path.isfile( filename ) : # Assume is not a directory
+            if BaseDataSource._refresh_cache or not os.path.isfile( filename ) : # Assume is not a directory
                 (filen, headers) = urllib.urlretrieve( url, filename )
 
             if headers :
