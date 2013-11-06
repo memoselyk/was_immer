@@ -1,5 +1,6 @@
 from definition_base import BaseDataSource
 import logging
+import itertools
 import re       # For regex parsing
 
 api_work_host = 'wiktionary.org_xml'
@@ -105,6 +106,9 @@ def get_definition(word, on_browser=False):
 def parse_german_noun_for_anki(parsed_data):
     return parse_german_data_for_anki(parsed_data, part_of_speech='noun')
 
+def parse_german_verb_for_anki(parsed_data):
+    return parse_german_data_for_anki(parsed_data, part_of_speech='verb')
+
 def parse_german_data_for_anki(parsed_data, part_of_speech=None) :
     logGerman = logging.getLogger('wiki.german')
 
@@ -130,13 +134,20 @@ def parse_german_data_for_anki(parsed_data, part_of_speech=None) :
     def output_section(data_dict, lvl=''):
         #for section in [ k for k in data_dict if k[0] != '_' ] :
         for section in data_dict :
-            logGerman.info('%s%s : %s' % (lvl, section, type(data_dict[section])))
-            #logGerman.debug(lvl + section)
+            if isinstance(data_dict[section], list) :
+                logGerman.info('%s%s : %s (%d)' % (lvl, section, type(data_dict[section]), len(data_dict[section])))
+            else :
+                logGerman.info('%s%s : %s' % (lvl, section, type(data_dict[section])))
+
+            if section == 'Conjugation' :
+                logGerman.debug('%r' % data_dict[section])
+
             if section[0] != '_' :
                 output_section(data_dict[section], lvl + '-')
     output_section( german_def )
 
     posToFunc = {
+        'verb' : _parse_german_verb_for_anki,
         'noun' : _parse_german_noun_for_anki,
     }
 
@@ -145,6 +156,216 @@ def parse_german_data_for_anki(parsed_data, part_of_speech=None) :
         raise ValueError('Parser for POS=%s not found!' % part_of_speech)
     else :
         dataParser(german_def, word)
+
+def _parse_german_verb_for_anki(german_def, word):
+    logVerb = logging.getLogger('wiki.verb')
+
+    # Find all Verbs in sub-levels
+    verbsList = []
+    def findAllVerbSubDicts(data_dict, path=()) :
+        # Add the found Verb to the results
+        if 'Verb' in data_dict :
+            verbsList.append((path, data_dict['Verb'], ))
+        # Process recursively sub-levels
+        for k in data_dict :
+            if k[0] == '_' or k == 'Verb' : continue    # Skip 'Verb' and '_text'
+            findAllVerbSubDicts(data_dict[k], path + (k, ))
+    findAllVerbSubDicts(german_def)
+
+    if len(verbsList) == 0 :
+        logVerb.error('Word:%s, is not a verb' % word) 
+        print '\t', '>' * 10, word, '>' * 10, 'NOT Verb', '/'.join([s for s in german_def if s[0] != '_'])
+        return
+
+    logVerb.info('Word: %s, has %d verbs' % (word, len(verbsList), ))
+
+    # Validate a couple of assumptions
+    verbInBase = filter(lambda p : len(p[0]) == 0, verbsList)
+    assert len(verbInBase) <= 1     # At most 1 verb in base
+    if len(verbInBase) == 1 :
+        assert len(verbsList) == 1     # If verbInBase, it should be the only one
+
+    missingConjugation = False
+    expectedConjTables = 0
+    for from_path, verb_def in verbsList :
+        from_name = '.'.join(from_path) if from_path else 'BASE'
+        logVerb.info('Processing verb in "%s"' % from_name)
+
+        # Validate that each Verb has conjugation (in XML)
+        if 'Conjugation' not in verb_def :
+            logVerb.warn('Word:%s, verb at %s does not have conjugation' % (word, from_name, ))
+            print '\t', '@' * 10, word, '@' * 10, 'NO Conjugation for Verb at %s' % from_name
+            missingConjugation = True
+        else :
+            expectedConjTables += 1
+
+    # Process the definition from parsed_data TODO
+
+    # Get the conjugation from html source
+
+    # Prefer BeautifulSoup v4 over BeautifulSoup v3
+    try :
+        from bs4 import BeautifulSoup
+    except ImportError :
+        from BeautifulSoup import BeautifulSoup
+
+    html_page = HtmlWiktionaryDataSource()._retrieve(word)
+    allPage = html_page.read()
+    html_page.close()
+
+
+    logVerb.info('Fetched html, with %d bytes, and %d lines' % (len(allPage), len(allPage.splitlines()), ))
+    #logVerb.debug("HTML: Has %d    id='Conjugation'      tags" % len(verbSoup.findAll(attrs={'id':'Conjugation'})))
+    #logVerb.debug("HTML: Has %d class='inflection-table' tags" % len(verbSoup.findAll(attrs={'class':'inflection-table'})))
+
+    allPage = allPage.decode('utf8')
+    verbSoup = BeautifulSoup(allPage)
+
+    # Find all Language headers, h2 with span of class mw-headline
+    langH2Tags = filter(
+            lambda t : t.findChild('span',attrs={'class':'mw-headline'}),
+            verbSoup.findAll('h2'))
+    logVerb.info("HTML: Has %d lang h2 header(s)" % len(langH2Tags))
+    
+    # Find the German's H2
+    germanHead = None
+    for num, h2Tag in enumerate(langH2Tags) :
+        logVerb.debug('-- %02d, H2 Lang id=%s' % (num, h2Tag.findChild('span',attrs={'class':'mw-headline'})['id'], ))
+        if h2Tag.findChild('span',attrs={'class':'mw-headline'})['id'] == 'German' :
+            germanHead = h2Tag
+    assert germanHead is not None
+
+    # Find the next Language H2 tag
+    germanIndex  = langH2Tags.index(germanHead)
+    nextLangHead = langH2Tags[germanIndex+1] if germanIndex+1 < len(langH2Tags) else None
+    logVerb.debug('German Lang head set to %d, next to %s' % (
+            germanIndex,
+            nextLangHead if nextLangHead is None else nextLangHead.findChild('span',attrs={'class':'mw-headline'})['id'],
+        ))
+
+    def findConjuationTablesAfterTag(startTag) :
+        def getConjugationTable(navHead):
+            if navHead.next != 'conjugation of ' :
+                return None
+            navContent = navHead.findNext('div', attrs={'class':'NavContent'})
+            if navContent is None :
+                return None
+            return navContent.findChild('table')
+
+        return filter(lambda n : n is not None,
+                map(getConjugationTable, startTag.findAllNext('div', attrs={'class':'NavHead'})))
+
+    # Find conjugations in German section
+    conjugationsAfterDE = findConjuationTablesAfterTag(germanHead)
+    if nextLangHead is None :
+        germanConjugations = conjugationsAfterDE
+        logVerb.info('Conjugation in German: %d, NO next lang' % len(germanConjugations))
+    else :
+        nextLangConjugations = findConjuationTablesAfterTag(nextLangHead)
+        if len(nextLangConjugations) == 0 :
+            germanConjugations = conjugationsAfterDE
+        else :
+            germanConjugations = conjugationsAfterDE[:-1*len(nextLangConjugations)]
+        logVerb.info('Conjugation in German: %d; After DE %d, Next lang %d' % (
+                len(germanConjugations), len(conjugationsAfterDE), len(nextLangConjugations)))
+
+    logVerb.info('VerbList %d, expectedConjTables %d, GermanConjugations %d' % (
+            len(verbsList), expectedConjTables, len(germanConjugations)))
+    assert len(germanConjugations) == expectedConjTables
+
+    if missingConjugation : # Stop processing this Word
+        return
+
+    # Helper functions to process the conjugation table
+    def getTagContents(tag):
+        """Get all direct children (contents) that are tag, not NavigableString
+        """
+        return filter(lambda c : not isinstance(c,basestring), tag.contents)
+
+    def processConjugationCell(cell):
+        """Return the extracted words from the given cell as a single string,
+        each word is comma separated.
+        """
+        # Data words are wrapped in <a> tag, if the word is the same of the definition
+        # it is in strong tag.
+        childRelevantTags = [ t.text for t in cell.findChildren('a') + cell.findChildren('strong') ]
+        if len(childRelevantTags) != 0 :
+            return ', '.join(childRelevantTags)
+        else : 
+            # Fallback
+            return cell.text
+
+    def processConjugationRow(row) :
+        """Return the extracted text from the processed conjugation rows as a list of String"""
+        # Use the consistent formatting in the HTML, data cells are 'td', and headers are 'th'
+        conjCells = row.findChildren('td')
+        if len(conjCells) == 4 :
+            # "Normal" conjugation cells
+            pass
+        elif len(conjCells) == 3 :
+            # Imperative conjugation cells
+            pass
+        elif len(conjCells) == 1 :
+            # Single word definition, such as infinitive, auxiliary, past participle, etc
+            pass
+        else :
+            raise ValueError('Conjugation cells have %d items, expected 3 or 4' % len(conjCells))
+        return filter(lambda x: len(x) != 0,   # Remove empty cells
+                [processConjugationCell(c).encode('utf8') for c in conjCells])
+
+    # Process each definition and its conjugation table, fist validate we have enough conjugation tables.
+    assert len(germanConjugations) == len(verbsList)
+
+    for num, verbPathDict, conjugationTable in zip(itertools.count(), verbsList, germanConjugations) :
+        verbFromPath, verbDefinitionDict = verbPathDict
+
+        tableRows = conjugationTable.findChildren('tr')
+        if not len(tableRows) == 14 :
+            logVerb.warn('Conjugation table%s has %d rows' % (
+                    '' if len(germanConjugations) == 1 else (' (%d)' % (num+1)),
+                    len(tableRows)))
+
+        assert len(tableRows) == 14
+
+        imperativeTense = {}
+        presentTense    = {}
+        preteriteTense  = {} 
+        conjugationDict = {
+                'imperative': imperativeTense,
+                'present'   : presentTense,
+                'preterite' : preteriteTense,
+            }
+
+        rowsIter = iter(tableRows)
+        rowsIter.next() # Skip infinitive, since it is in TH not TD tags 
+        (conjugationDict['PresentParticiple'], ) = processConjugationRow(rowsIter.next())  # present participle
+        (conjugationDict['PastParticiple'], ) = processConjugationRow(rowsIter.next())  # past participle
+        (conjugationDict['Auxiliary'], ) = processConjugationRow(rowsIter.next())  # auxiliary
+        rowsIter.next() # Skip indicative, subjuntive headers
+        presentTense['1P_S'], presentTense['1P_Pl'], _, _ = processConjugationRow(rowsIter.next())  # present 1st person, no subjunctive
+        presentTense['2P_S'], presentTense['2P_Pl'], _, _ = processConjugationRow(rowsIter.next())  # present 2nd person, no subjunctive
+        presentTense['3P_S'], presentTense['3P_Pl'], _, _ = processConjugationRow(rowsIter.next())  # present 3rd person, no subjunctive
+        rowsIter.next() # Skip separator row
+        preteriteTense['1P_S'], preteriteTense['1P_Pl'], _, _ = processConjugationRow(rowsIter.next())  # preterite 1st person, no subjunctive
+        preteriteTense['2P_S'], preteriteTense['2P_Pl'], _, _ = processConjugationRow(rowsIter.next())  # preterite 2nd person, no subjunctive
+        preteriteTense['3P_S'], preteriteTense['3P_Pl'], _, _ = processConjugationRow(rowsIter.next())  # preterite 3rd person, no subjunctive
+        rowsIter.next() # Skip separator row
+        imperativeTense['2P_S'], imperativeTense['2P_Pl'] = processConjugationRow(rowsIter.next())  # imperative
+
+        #print '%r' % conjugationDict
+        print 'Verb:', word, 'from', verbFromPath
+        print 'Present perfect:', '(%s) %s' % (conjugationDict['Auxiliary'], conjugationDict['PastParticiple'], )
+        print 'Present Tense:', '|'.join(presentTense['%dP_%s' % (p, n)]
+                for n in ['S', 'Pl'] for p in [1,2,3] ) # First all Singular, then all Plural, with person from 1st to 3rd
+        print 'Preterite Tense:', '|'.join(preteriteTense['%dP_%s' % (p, n)]
+                for n in ['S', 'Pl'] for p in [1,2,3] ) # First all Singular, then all Plural, with person from 1st to 3rd
+        print 'Imperative:', '|'.join([imperativeTense['2P_S'], imperativeTense['2P_Pl']])
+
+        print 'Definition:'
+        for line in verbDefinitionDict['_text'] :
+            print ' -', line
+
+        formatDefinitionAsHtml(verbDefinitionDict['_text'], logVerb, word)
 
 def _parse_german_noun_for_anki(german_def, word):
     logNoun = logging.getLogger('wiki.noun')
@@ -170,7 +391,7 @@ def _parse_german_noun_for_anki(german_def, word):
     if not noun_def :
         logNoun.error('%s has only: %s' %
                 (word, '/'.join([s for s in german_def if s[0] != '_'])) )
-        print '\t', '>' * 10, word, '>' * 10, '/'.join([s for s in german_def if s[0] != '_'])
+        print '\t', '>' * 10, word, '>' * 10, 'NOT Noun', '/'.join([s for s in german_def if s[0] != '_'])
     else :
         if not 'Noun' in german_def : logNoun.warn('%s, Noun in down-levels' % word)
 
@@ -180,6 +401,13 @@ def _parse_german_noun_for_anki(german_def, word):
 
         logNoun.info('(%d) -> %d' % (len(noun_def), len(no_quot_noun)) )
 
+        formatDefinitionAsHtml(noun_def, logNoun, word)
+
+
+def formatDefinitionAsHtml(noun_def, logNoun, word) :
+        listItemsCount = len(filter(lambda l : l.startswith('# '),
+                noun_def))
+
         numbered_list_counter = 0
         for line_text in noun_def :
             if line_text.startswith('#*') : continue    # Skip quotations
@@ -187,9 +415,15 @@ def _parse_german_noun_for_anki(german_def, word):
             if re.match('^-+$', line_text) is not None : continue    # Skip dash 'separators'
 
             if line_text.startswith('# ') :
+                # FIXME: This omit the first element if more than one list is present
                 numbered_list_counter += 1
-                # FIXME Number should be omitted if list contains only 1 element
-                line_text = ('%d.'%numbered_list_counter) + line_text[2:]
+                # Omit the number if there is only one element, and this is the first element
+                # The second condition seems redundant, but in case the listItemsCount is
+                # incorrectly calculated, the number will be omitted only in the first item
+                if listItemsCount == 1 and numbered_list_counter == 1 :
+                    line_text = line_text[2:]
+                else :
+                    line_text = ('%d.'%numbered_list_counter) + line_text[2:]
             else :
                 numbered_list_counter = 0
 
@@ -244,8 +478,9 @@ def _parse_german_noun_for_anki(german_def, word):
 
                 logNoun.debug('Would process template: %s with %r and %r' % (name, list_args, kw_args))
 
+                name = name.replace('-', '_').replace(' ', '_')
                 try :
-                    replacement = getattr(template_processor, name.replace('-', '_'))(logNoun, *list_args, **kw_args)
+                    replacement = getattr(template_processor, name)(logNoun, *list_args, **kw_args)
                 except AttributeError :
                     logNoun.critical('Template processor "%s" not found!' % name)
                     replacement = match.group(0)#''
@@ -253,7 +488,9 @@ def _parse_german_noun_for_anki(german_def, word):
                 line_text = line_text[0:match.start()] + replacement + line_text[match.end():]
                 last_found_end = match.end()
 
-            if len(line_text) == 0 : continue   # de-noun template if parsed_head : skip
+            # Some lines have templates that generate other lines, and the final string is empty
+            # Skip those lines
+            if len(line_text) == 0 : continue
 
             print line_text
 
@@ -271,8 +508,14 @@ class Templates(object):
                 'meteorology', 'nautical', 'obsolete', 'poetry', 'printing', 'software', 'sports',
                 'textiles'] :
             return lambda l, *a, **k : Templates.context(l, *([name]+list(a)), **k)
+        elif name in [ 'de_verb', 'de_verb_irregular', 'de_verb_strong', 'de_verb_weak' ] :
+            return Templates._SkipTemplate
         else :
             raise AttributeError
+
+    @staticmethod
+    def _SkipTemplate(log, *args, **kw_args) :
+        return ''
 
     @staticmethod
     def context(log, *args, **kw_args):
@@ -351,11 +594,17 @@ class Templates(object):
 
         print 'de_noun GENDER(s)     = %s' % ','.join(prop_gender)
         print 'de_noun PLURAL(s)     = %s' % ','.join(prop_plural)
-        print 'de_noun GENITIVE(s)   = %s' % ','.join(prop_genitive)
+        #print 'de_noun GENITIVE(s)   = %s' % ','.join(prop_genitive)   # Omit until it is used
         if prop_diminutive :
             print 'de_noun DIMINUTIVE(s) = %s' % ','.join(prop_diminutive)
 
         return ''
+
+    @staticmethod
+    def non_gloss_definition(log, *args, **kw_args):
+        args_list = list(args)
+        return '/'.join('<span style="font-style:italic;">'
+                '%s</span>' % arg for arg in (args_list + [ '<b>%s</b>=%s' % (k,kw_args[k]) for k in kw_args ]) )
 
     @staticmethod
     def gloss(log, *args, **kw_args):
